@@ -45,4 +45,22 @@ Em resumo, a relação entre a situação-problema da organização e o impacto 
 
 ## Descrição do Parceiro
 
-Apresente uma descrição resumida sobre a organização onde o projeto será desenvolvido para que possa ser compreendido o cenário sistema sociotécnico.
+A Polo é uma empresa de engenharia fundada em 2011 com o objetivo de empreender tanto no ramo de serviços de engenharia elétrica (manutenção, instalação, análise e projetos) como no comércio de materiais e equipamentos elétricos. O foco da empresa desde então tem sido a busca por soluções personalizadas à demanda dos nossos clientes, entre os principais estão:
+
+Elaboração de laudos:
+- Análise de óleo isolante (fisico-quimico e cromatografica)
+- Aterramento e sistema de proteção contra descargas atmosféricas (SPDA)
+- Isolação de equipamentos de proteção EPI e EPC
+- NR-10 
+
+Projetos:
+- Cabine primária e subestação de energia de média e baixa tensão
+- SPDA
+- Montagem de painéis, banco de capacitores
+- Diagramas unifilar em geral
+
+Montagem e/ou instalação:
+- Painéis elétricos
+- Transformadores
+- Geradores
+- Banco de capacitores
