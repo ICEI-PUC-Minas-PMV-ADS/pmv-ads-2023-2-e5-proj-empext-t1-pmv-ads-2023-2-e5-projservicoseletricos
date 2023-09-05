@@ -15,11 +15,11 @@ Desenvolver uma aplicação web que solucione os desafios de divulgação, acess
 
 ### Objetivos Específicos
 
-    - Criar um site atraente e informativo que apresente a empresa, seus valores, equipe e experiência no setor.
-    - Oferecer informações detalhadas sobre os serviços prestados, incluindo descrições, benefícios e preços.
-    - Implementar uma funcionalidade de solicitação de orçamento online para os clientes interessados.
-    - Facilitar o contato direto com a equipe da empresa por meio de formulários de contato e informações de contato atualizadas.
-    - Melhorar a visibilidade da empresa nos mecanismos de busca, otimizando o site para SEO (Search Engine Optimization).
+ 1) Criar um site atraente e informativo que apresente a empresa, seus valores, equipe e experiência no setor.
+ 2) Oferecer informações detalhadas sobre os serviços prestados, incluindo descrições, benefícios e preços.
+ 3) Implementar uma funcionalidade de solicitação de orçamento online para os clientes interessados.
+ 4) Facilitar o contato direto com a equipe da empresa por meio de formulários de contato e informações de contato atualizadas.
+ 5) Melhorar a visibilidade da empresa nos mecanismos de busca, otimizando o site para SEO (Search Engine Optimization).
 
 ## Justificativa
 
@@ -33,13 +33,13 @@ A extensão universitária desempenha um papel fundamental na conexão entre a a
 
 A implantação da aplicação web proposta tem o potencial de gerar os seguintes impactos sociais:
 
-    Acesso à Informação: Ao oferecer informações detalhadas sobre serviços elétricos industriais, segurança e manutenção, a aplicação permitirá que as empresas e indústrias tomem decisões mais informadas sobre seus sistemas elétricos. Isso pode contribuir para a segurança no local de trabalho, a prevenção de acidentes e a eficiência operacional.
+Acesso à Informação: Ao oferecer informações detalhadas sobre serviços elétricos industriais, segurança e manutenção, a aplicação permitirá que as empresas e indústrias tomem decisões mais informadas sobre seus sistemas elétricos. Isso pode contribuir para a segurança no local de trabalho, a prevenção de acidentes e a eficiência operacional.
 
-    Inclusão Digital: A aplicação web promoverá a inclusão digital ao facilitar o acesso à informação e à solicitação de serviços para um público diversificado, incluindo empresas de pequeno e médio porte que talvez não tenham recursos para investir em estratégias de marketing convencionais.
+Inclusão Digital: A aplicação web promoverá a inclusão digital ao facilitar o acesso à informação e à solicitação de serviços para um público diversificado, incluindo empresas de pequeno e médio porte que talvez não tenham recursos para investir em estratégias de marketing convencionais.
 
-    Geração de Empregos: A expansão dos negócios da empresa como resultado de uma presença online efetiva pode levar à criação de empregos adicionais, beneficiando a economia local e regional.
+Geração de Empregos: A expansão dos negócios da empresa como resultado de uma presença online efetiva pode levar à criação de empregos adicionais, beneficiando a economia local e regional.
 
-    Fortalecimento da Competitividade Local: A melhoria da visibilidade da empresa no mercado local e regional pode fortalecer a competitividade da região como um centro de excelência em serviços elétricos industriais.
+Fortalecimento da Competitividade Local: A melhoria da visibilidade da empresa no mercado local e regional pode fortalecer a competitividade da região como um centro de excelência em serviços elétricos industriais.
 
 Em resumo, a relação entre a situação-problema da organização e o impacto social esperado com a implantação do sistema sociotécnico é claramente positiva. A aplicação web não só atenderá às necessidades da empresa, mas também contribuirá para a disseminação de informações valiosas, inclusão digital e o bem-estar geral da comunidade e da indústria elétrica industrial. Essa conexão entre a solução proposta e o impacto social representa um compromisso genuíno com a extensão universitária e a responsabilidade social.
 
