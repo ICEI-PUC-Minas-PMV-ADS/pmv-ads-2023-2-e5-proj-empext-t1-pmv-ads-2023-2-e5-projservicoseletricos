@@ -1,40 +1,47 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+O projeto em questão visa o desenvolvimento de uma aplicação web para atender às necessidades de uma empresa prestadora de serviços na área elétrica industrial. Esta empresa oferece uma gama de serviços críticos para a indústria, como manutenção de cabine primária, Sistema de Proteção contra Descargas Atmosféricas (SPDA), análise de óleo de transformador, entre outros. A aplicação web tem como objetivo centralizar a divulgação da empresa e de seus serviços, proporcionando uma plataforma informativa e interativa para seus clientes e potenciais clientes.
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
-
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
-
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
-
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+A empresa enfrenta atualmente um desafio significativo na divulgação de seus serviços e no alcance de seu público-alvo. Os métodos de marketing tradicionais têm se mostrado insuficientes para atender às demandas do mercado, e a falta de uma presença online efetiva está prejudicando sua capacidade de competir e expandir seus negócios. Além disso, a ausência de uma plataforma online para os clientes acessarem informações e solicitar serviços de forma eficiente representa uma lacuna que precisa ser preenchida.
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+Os objetivos deste projeto incluem:
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+### Objetivo Geral
+
+Desenvolver uma aplicação web que solucione os desafios de divulgação, acesso à informação e solicitação de serviços que a empresa de serviços elétricos industriais enfrenta.
+
+### Objetivos Específicos
+
+    - Criar um site atraente e informativo que apresente a empresa, seus valores, equipe e experiência no setor.
+    - Oferecer informações detalhadas sobre os serviços prestados, incluindo descrições, benefícios e preços.
+    - Implementar uma funcionalidade de solicitação de orçamento online para os clientes interessados.
+    - Facilitar o contato direto com a equipe da empresa por meio de formulários de contato e informações de contato atualizadas.
+    - Melhorar a visibilidade da empresa nos mecanismos de busca, otimizando o site para SEO (Search Engine Optimization).
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
+A escolha de desenvolver esta aplicação web é motivada pela importância de uma presença online efetiva nos dias de hoje. A área elétrica industrial é altamente competitiva, e as empresas que não acompanham as tendências tecnológicas e as expectativas dos clientes correm o risco de ficar para trás. Além disso, a pandemia de COVID-19 acelerou a necessidade de soluções digitais que permitam o acesso a informações e serviços sem a necessidade de contato presencial.
 
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
-
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+Este projeto visa aprimorar a eficiência operacional da empresa, aumentar sua visibilidade no mercado e facilitar a interação com seus clientes. Ao fornecer informações claras e acesso simplificado aos serviços, a aplicação web irá melhorar a experiência do cliente, aumentar as oportunidades de negócios e contribuir para o crescimento sustentável da empresa.
 
 ## Relação com a Extensão Universitária
 
-Relacionar a situação-problema da organização com o impacto social esperado com a implantação do sistema sociotécnico.
+A extensão universitária desempenha um papel fundamental na conexão entre a academia e a comunidade, visando à aplicação prática do conhecimento em benefício da sociedade. Neste contexto, o desenvolvimento da aplicação web para serviços na área elétrica industrial está intrinsicamente relacionado à extensão universitária, pois busca abordar problemas reais enfrentados por uma empresa do setor e, ao mesmo tempo, promover um impacto social positivo.
+
+A implantação da aplicação web proposta tem o potencial de gerar os seguintes impactos sociais:
+
+    Acesso à Informação: Ao oferecer informações detalhadas sobre serviços elétricos industriais, segurança e manutenção, a aplicação permitirá que as empresas e indústrias tomem decisões mais informadas sobre seus sistemas elétricos. Isso pode contribuir para a segurança no local de trabalho, a prevenção de acidentes e a eficiência operacional.
+
+    Inclusão Digital: A aplicação web promoverá a inclusão digital ao facilitar o acesso à informação e à solicitação de serviços para um público diversificado, incluindo empresas de pequeno e médio porte que talvez não tenham recursos para investir em estratégias de marketing convencionais.
+
+    Geração de Empregos: A expansão dos negócios da empresa como resultado de uma presença online efetiva pode levar à criação de empregos adicionais, beneficiando a economia local e regional.
+
+    Fortalecimento da Competitividade Local: A melhoria da visibilidade da empresa no mercado local e regional pode fortalecer a competitividade da região como um centro de excelência em serviços elétricos industriais.
+
+Em resumo, a relação entre a situação-problema da organização e o impacto social esperado com a implantação do sistema sociotécnico é claramente positiva. A aplicação web não só atenderá às necessidades da empresa, mas também contribuirá para a disseminação de informações valiosas, inclusão digital e o bem-estar geral da comunidade e da indústria elétrica industrial. Essa conexão entre a solução proposta e o impacto social representa um compromisso genuíno com a extensão universitária e a responsabilidade social.
 
 ## Descrição do Parceiro
 
