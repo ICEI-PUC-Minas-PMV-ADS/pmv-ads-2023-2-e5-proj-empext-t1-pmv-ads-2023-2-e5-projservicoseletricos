@@ -32,7 +32,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-002| Permitir que o usuário cadastre serviços | ALTA |
 |RF-002| Permitir que o usuário edite serviços | ALTA |
 |RF-002| Permitir que o usuário exclua serviços | ALTA |
-|RF-002| Permitir que o cliente pesquise serviços | ALTA |
+|RF-002| Permitir que o cliente visualize o serviço | ALTA |
 |RF-003| Permitir que o cliente solicite orçamento | ALTA |
 |RF-003| Permitir que o usuário responda o orçamento | ALTA |
 |RF-004| Permitir que o usuário gerencie a agenda | MÉDIA |
