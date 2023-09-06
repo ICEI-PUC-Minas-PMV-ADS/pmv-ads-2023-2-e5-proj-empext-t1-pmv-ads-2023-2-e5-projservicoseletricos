@@ -74,8 +74,14 @@ Enumere as restrições à sua solução. Lembre-se de que as restrições geral
 ## Modelo ER (Projeto Conceitual)
 
 
+<div align="center">
+<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t1-pmv-ads-2023-2-e5-projservicoseletricos/blob/main/src/ModeloConceitual.png" alt='ER' width: 300px; height: 220px/>
+</div>
 
-> - [Como fazer um diagrama entidade relacionamento | Lucidchart](https://www.lucidchart.com/pages/pt/como-fazer-um-diagrama-entidade-relacionamento)
+
+
+
+
 
 ## Projeto da Base de Dados
 
