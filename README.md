@@ -17,7 +17,7 @@ Desenvolvimento de aplicação web voltada para gerenciamento de produtos e serv
 * Pedro Henrique Pinto de Lacerda
 * Victor Ribeiro Gammaro
 
-## 
+##  Orientador
 
 * Sandra Maria Silveira
 
