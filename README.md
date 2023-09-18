@@ -1,4 +1,6 @@
-# PROJETO DE SERVIÇOS ELÉTRICOS
+<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t1-pmv-ads-2023-2-e5-projservicoseletricos/blob/main/src/logo.jpeg" />
+
+## PROJETO DE SERVIÇOS ELÉTRICOS
 
 `ANALISE E DESENVOVIMENTO DE SISTEMAS`
 
