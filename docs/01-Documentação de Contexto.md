@@ -11,15 +11,15 @@ Os objetivos deste projeto incluem:
 
 ### Objetivo Geral
 
-Desenvolver uma aplicação web que solucione os desafios de divulgação, acesso à informação e solicitação de serviços que a empresa de serviços elétricos industriais enfrenta.
+Desenvolver uma aplicação  que solucione os desafios de divulgação, acesso à informação e solicitação de serviços que a empresa de serviços elétricos industriais enfrenta.
 
 ### Objetivos Específicos
 
  1) Criar um site atraente e informativo que apresente a empresa, seus valores, equipe e experiência no setor.
  2) Oferecer informações detalhadas sobre os serviços prestados, incluindo descrições, benefícios e preços.
- 3) Implementar uma funcionalidade de solicitação de orçamento online para os clientes interessados.
+ 3) Viabilizar uma funcionalidade de solicitação de orçamento online para os clientes interessados.
  4) Facilitar o contato direto com a equipe da empresa por meio de formulários de contato e informações de contato atualizadas.
- 5) Melhorar a visibilidade da empresa nos mecanismos de busca, otimizando o site para SEO (Search Engine Optimization).
+ 5) Melhorar a visibilidade da empresa nos mecanismos de busca, otimizando a aplicação.
 
 ## Justificativa
 
