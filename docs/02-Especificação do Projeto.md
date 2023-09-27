@@ -82,5 +82,5 @@ Enumere as restrições à sua solução. Lembre-se de que as restrições geral
 O projeto da base de dados corresponde à representação das entidades e relacionamentos identificadas no Modelo ER, no formato de tabelas, com colunas e chaves primárias/estrangeiras necessárias para representar corretamente as restrições de integridade.
 
 <div align="center">
-<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t1-pmv-ads-2023-2-e5-projservicoseletricos/blob/main/src/mdelofisico.png" alt='ER' width: 250px; height: 180px/>
+<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t1-pmv-ads-2023-2-e5-projservicoseletricos/blob/main/src/er_model.png" alt='ER' width: 250px; height: 180px/>
 </div>
