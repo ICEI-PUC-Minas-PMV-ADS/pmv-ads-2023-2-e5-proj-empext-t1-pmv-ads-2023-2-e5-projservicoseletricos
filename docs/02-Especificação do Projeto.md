@@ -26,16 +26,16 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
 |RF-001| Permitir que o usuário cadastre produtos | ALTA |
-|RF-001| Permitir que o usuário edite produtos | ALTA |
-|RF-001| Permitir que o usuário exclua produtos | ALTA |
-|RF-001| Permitir que o cliente pesquise produtos | ALTA |
-|RF-002| Permitir que o usuário cadastre serviços | ALTA |
-|RF-002| Permitir que o usuário edite serviços | ALTA |
-|RF-002| Permitir que o usuário exclua serviços | ALTA |
-|RF-002| Permitir que o cliente visualize os serviços | ALTA |
-|RF-003| Permitir que o cliente solicite orçamento | ALTA |
-|RF-003| Permitir que o usuário responda o orçamento | ALTA |
-|RF-004| Permitir que o usuário gerencie a agenda | MÉDIA |
+|RF-002| Permitir que o usuário edite produtos | ALTA |
+|RF-003| Permitir que o usuário exclua produtos | ALTA |
+|RF-004| Permitir que o cliente pesquise produtos | ALTA |
+|RF-005| Permitir que o usuário cadastre serviços | ALTA |
+|RF-006| Permitir que o usuário edite serviços | ALTA |
+|RF-007| Permitir que o usuário exclua serviços | ALTA |
+|RF-008| Permitir que o cliente visualize os serviços | ALTA |
+|RF-009| Permitir que o cliente solicite orçamento | ALTA |
+|RF-010| Permitir que o usuário responda o orçamento | ALTA |
+|RF-011| Permitir que o usuário gerencie a agenda | MÉDIA |
 
 
 ### Requisitos não Funcionais
