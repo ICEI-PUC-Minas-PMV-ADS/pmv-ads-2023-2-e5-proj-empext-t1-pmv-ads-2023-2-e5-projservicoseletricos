@@ -37,3 +37,17 @@
 |Pré-condição| Estar na aba de produtos (não é necessário login no site). |
 |Fluxo do teste| Clicar na aba “Produtos”. <br /> Clicar no campo "Pesquisar". <br /> Inserir o nome do produto que deseja pesquisar. <br /> Clicar em "Pesquisar". |
 |Resultado esperado| Pesquisar produto da pagina de "Produtos". |
+
+### Evidências de Teste de Software
+
+|Título |Criação do produto|
+|------|-----------------------------------------|
+||
+
+|Título |Edição do produto|
+|------|-----------------------------------------|
+||
+
+|Título |Exlusão do produto|
+|------|-----------------------------------------|
+||
