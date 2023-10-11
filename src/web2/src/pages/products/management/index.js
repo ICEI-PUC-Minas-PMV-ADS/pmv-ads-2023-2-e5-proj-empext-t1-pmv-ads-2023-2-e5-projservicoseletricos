@@ -12,6 +12,9 @@ import { getCategorys } from "../../../services/api/categorys";
 import { getSubCategorys } from "../../../services/api/subcategorys";
 import { deleteProduct } from "../../../services/api/products";
 import NotFound from "../../../components/notFound";
+import { Fragment, useEffect, useState } from "react";
+import { useQuery } from "react-query";
+import { BsArrowLeft } from "react-icons/bs";
 
 export default function ProductManagement() {
   const [actualSubCatgory, setActualSubCategory] = useState(0);

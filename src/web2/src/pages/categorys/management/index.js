@@ -4,6 +4,8 @@ import { DescriptionPages, TitlePages } from "../../../styleGlobal/styles";
 import { Container, AlignText, CardsWrapper } from "./styles";
 import { deleteCategory, getCategorys } from "../../../services/api/categorys";
 import useAuth from "../../../context/auth";
+import { useState } from "react";
+import { useQuery } from "react-query";
 
 export default function CategoryManagement() {
   const { user } = useAuth();

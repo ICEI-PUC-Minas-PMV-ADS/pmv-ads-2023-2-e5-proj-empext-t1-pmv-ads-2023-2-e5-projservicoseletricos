@@ -6,6 +6,8 @@ import useAuth from "../../context/auth";
 import { Form } from "../../styleGlobal/styles";
 import http from "../../services/http";
 import { ContainerOptionReport, OptionReport } from "./styles";
+import { useState } from "react";
+import { useNavigate } from "react-router";
 
 export default function EditUser() {
   const [loading, setLoading] = useState(false);

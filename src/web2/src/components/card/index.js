@@ -1,6 +1,10 @@
 import { DivRow } from "../../styleGlobal/styles";
 import { CardStyle } from "./styles";
 import ModalDelete from "../modalDelete";
+import { FiEdit } from "react-icons/fi";
+import { RiDeleteBin6Line } from "react-icons/ri";
+import { useNavigate } from "react-router";
+import { useState } from "react";
 
 export default function Card(props) {
   const [modal, setModal] = useState(false);

@@ -1,4 +1,6 @@
 import { SelectStyle, Container, Drop } from "./styles";
+import { useState } from "react";
+import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 
 export default function SelectPersonality(props) {
   const [openDrop, setOpenDrop] = useState(false);

@@ -3,6 +3,8 @@ import { DescriptionPages, TitlePages, InputsContent, Form,} from "../../styleGl
 import FilledButton from "../filledButton";
 import MessageError from "../messageError";
 import { Overlay, CardDelete } from "./styles";
+import { useState } from "react";
+import { useMutation, useQueryClient } from "react-query";
 
 export default function ModalDelete(props) {
   const [loading, setLoading] = useState(false);

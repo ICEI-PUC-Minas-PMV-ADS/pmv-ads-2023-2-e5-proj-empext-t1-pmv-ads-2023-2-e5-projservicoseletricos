@@ -10,6 +10,9 @@ import { getCategorys } from "../../../services/api/categorys";
 import { editSubcategory, getSubcategoryById,} from "../../../services/api/subcategorys";
 import { Container, DescriptionPages, Form, InputsContent, TitlePages,} from "../../../styleGlobal/styles";
 import useAuth from "../../../context/auth";
+import {  useState } from "react";
+import { useMutation, useQuery, useQueryClient } from "react-query";
+import { useParams } from "react-router";
 
 export default function EditSubcategorys() {
   const { user } = useAuth();

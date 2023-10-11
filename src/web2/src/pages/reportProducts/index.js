@@ -1,6 +1,7 @@
 import { ContainerReport, TotalReports, ButtonPrint, ContainerProductsReport, ProductReportSingle,} from "./styles";
 import relatorio from "../../services/relatorio";
 import moment from "moment";
+import { useEffect, useRef, useState } from "react";
 
 export default function ReportsProducts() {
   const [products, setProducts] = useState();

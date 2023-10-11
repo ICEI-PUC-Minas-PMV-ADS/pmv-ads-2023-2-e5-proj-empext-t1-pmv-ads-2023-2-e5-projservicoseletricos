@@ -1,4 +1,6 @@
 import { Container } from "./styles";
+import { AiOutlinePlus } from "react-icons/ai";
+import { useNavigate } from "react-router";
 
 export default function SideManager(props) {
   const navigate = useNavigate();

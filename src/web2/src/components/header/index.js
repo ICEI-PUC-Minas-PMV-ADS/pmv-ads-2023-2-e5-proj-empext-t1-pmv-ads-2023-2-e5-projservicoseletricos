@@ -1,6 +1,10 @@
 import { HeaderStyles, ContentNav, DataUser, NameUser, ImageUser,} from "./styles";
 import useAuth from "../../context/auth";
 import Polo from "../../assets/images/logo.png";
+import { useNavigate } from "react-router-dom";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { useState } from "react";
+import { AiOutlineUser } from "react-icons/ai";
 
 export default function Header() {
   const [menu, setMenu] = useState(false);

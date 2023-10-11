@@ -13,6 +13,9 @@ import http from "../../../services/http";
 import SelectPersonality from "../../../components/select";
 import MessageError from "../../../components/messageError";
 import Card from "../../../components/card";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useMutation, useQuery, useQueryClient } from "react-query";
 
 export default function RegisterProduct() {
   const [loading, setLoading] = useState(false);

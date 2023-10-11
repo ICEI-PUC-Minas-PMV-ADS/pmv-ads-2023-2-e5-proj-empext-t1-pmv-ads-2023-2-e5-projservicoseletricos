@@ -1,5 +1,6 @@
 import { Content, FooterStyles, InfoPolo, Members, BaseFooter, Container,} from "./styles";
 import Polo from "../../assets/images/logo.png";
+import { useNavigate } from "react-router";
 
 export default function Footer() {
   const navigate = useNavigate();
@@ -47,7 +48,7 @@ export default function Footer() {
                   </li>
                 </ul>
                 <p className="professor">
-                  Professor: Felipe Augusto Lara Soares
+                  Professor: 
                 </p>
               </div>
             </Content>

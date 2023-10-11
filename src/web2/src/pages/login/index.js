@@ -6,6 +6,9 @@ import useAuth from "../../context/auth";
 import { Form } from "../../styleGlobal/styles";
 import Background from "../../assets/images/background.png";
 import ManBlue from "../../assets/images/login-image.png";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 
 export default function Login() {
   const [loading, setLoading] = useState(false);

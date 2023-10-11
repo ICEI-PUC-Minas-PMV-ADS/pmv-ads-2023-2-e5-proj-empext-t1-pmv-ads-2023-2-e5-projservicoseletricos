@@ -7,6 +7,9 @@ import FilledButton from "../../../components/filledButton";
 import MessageError from "../../../components/messageError";
 import { editCategory, getCategoryById } from "../../../services/api/categorys";
 import { Container, DescriptionPages, Form, InputsContent, TitlePages,} from "../../../styleGlobal/styles";
+import { useState } from "react";
+import { useMutation, useQuery, useQueryClient } from "react-query";
+import { useParams } from "react-router";
 
 export default function EditCategorys() {
   const [loading, setLoading] = useState(false);

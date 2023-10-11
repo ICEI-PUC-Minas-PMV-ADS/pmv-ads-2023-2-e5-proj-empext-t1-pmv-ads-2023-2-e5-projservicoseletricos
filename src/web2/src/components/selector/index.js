@@ -1,4 +1,6 @@
 import { CardSubcategorys, ModalCategoryCard, TitleCategoryCard,} from "./styles";
+import { useState } from "react";
+import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 
 export default function Selector(props) {
   const [openSubcategorys, setOpenSubcategorys] = useState({

@@ -5,6 +5,10 @@ import useAuth from "../../context/auth";
 import { Form } from "../../styleGlobal/styles";
 import Background from "../../assets/images/background.png";
 import ManBlue from "../../assets/images/login-image.png";
+import {  useState } from "react";
+import { useNavigate } from "react-router";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { useFormik } from "formik";
 
 export default function SignIn() {
   const [loading, setLoading] = useState(false);

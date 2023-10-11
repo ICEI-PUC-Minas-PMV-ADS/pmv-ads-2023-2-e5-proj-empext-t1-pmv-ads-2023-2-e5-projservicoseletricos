@@ -10,6 +10,9 @@ import { getCategorys } from "../../../services/api/categorys";
 import { deleteSubcategory, getSubCategorys,} from "../../../services/api/subcategorys";
 import useAuth from "../../../context/auth";
 import NotFound from "../../../components/notFound";
+import { useEffect, useState } from "react";
+import { BsArrowLeft } from "react-icons/bs";
+import { useQuery } from "react-query";
 
 export default function SubcategorysManagement() {
   const [actualCategory, setActualCategory] = useState();

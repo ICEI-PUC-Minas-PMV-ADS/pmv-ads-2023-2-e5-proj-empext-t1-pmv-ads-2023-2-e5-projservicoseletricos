@@ -43,7 +43,7 @@ export const Content = styled.div`
   }
 `;
 
-export const InfoMyStock = styled.div`
+export const InfoPolo = styled.div`
   display: flex;
   flex-direction: column;
   align-items: left;

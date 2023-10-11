@@ -11,6 +11,8 @@ import { getCategorys } from "../../../services/api/categorys";
 import { createSubcategory, getSubCategorys,} from "../../../services/api/subcategorys";
 import { CenterSpinner, Container, DescriptionPages, Form, InputsContent, TitlePages,} from "../../../styleGlobal/styles";
 import useAuth from "../../../context/auth";
+import { useState } from "react";
+import { useMutation, useQuery, useQueryClient } from "react-query";
 
 export default function RegisterSubCategorys() {
   const { user } = useAuth();
