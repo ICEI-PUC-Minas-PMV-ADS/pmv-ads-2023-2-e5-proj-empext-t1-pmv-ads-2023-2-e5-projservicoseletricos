@@ -2,17 +2,22 @@ import styled from "styled-components";
 
 export const FooterStyles = styled.div`
   width: 100%;
-  border-top: 1px solid #043C65;
-  padding: 30px 20px 10px 20px;
+  border-top: 1px solid #0B93F6;
+  padding: 15px 20px 10px 20px;
+  background-color: #F0FDFF;
+  
 
   h2 {
+    font-size: 16px;
     font-weight: 500;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+    color: #000000;
   }
 
   p {
-    font-size: 14px;
+    font-size: 10px;
     font-weight: 400;
+    color: #000000;
   }
 
   @media print {
@@ -31,7 +36,7 @@ export const Content = styled.div`
   gap: 40px;
 
   .professor {
-    margin-top: 40px;
+    margin-top: 6px;
   }
 
   @media (max-width: 700px) {
@@ -64,9 +69,10 @@ export const InfoPolo = styled.div`
 export const Members = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: center;
   justify-content: center;
   flex: 1;
+  
   ul {
     display: flex;
     flex-direction: column;
@@ -81,10 +87,11 @@ export const Members = styled.div`
 
     li {
       list-style: none;
+      margin-top: -8px;
       a {
-        color: #fff;
-        font-size: 12px;
+        font-size: 8px;
         font-weight: 400;
+        color: #000000;
       }
     }
   }
@@ -95,17 +102,17 @@ export const Members = styled.div`
 `;
 
 export const BaseFooter = styled.div`
-  border-top: 1px solid #043C65;
+  border-top: 1px solid #0B93F6;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 12px;
   padding: 10px 0 5px 0;
   gap: 10px;
 
   p {
-    font-size: 14px;
+    font-size: 8px;
     font-weight: 400;
   }
 

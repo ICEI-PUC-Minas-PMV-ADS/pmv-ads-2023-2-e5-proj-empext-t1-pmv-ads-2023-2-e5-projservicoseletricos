@@ -8,14 +8,7 @@ export default function Footer() {
     <FooterStyles>
       <Container>
         <Content>
-          <InfoPolo>
-            <h2>Sobre a Polo</h2>
-            <p>
-            A Polo é uma empresa de engenharia fundada em 2011 com o objetivo de empreender tanto no ramo de serviços de engenharia elétrica 
-            (manutenção, instalação, análise e projetos) como no comércio de materiais e equipamentos elétricos.
-            O foco da empresa desde então tem sido a busca por soluções personalizadas à demanda dos nossos clientes..{" "}
-            </p>
-          </InfoPolo>
+          
           <Members>
             <h2>Desenvolvedores</h2>
             <Content row>

@@ -5,6 +5,7 @@ export const Container = styled.div`
   width: 100%;
   height: calc(100vh - 62px);
 
+
   @media (max-width: 700px) {
     flex-direction: column;
   }
@@ -21,6 +22,7 @@ export const CenterSpinner = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  
 `;
 
 export const Form = styled.form`
@@ -28,6 +30,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  
 `;
 
 export const DivRow = styled.div`
@@ -35,11 +38,13 @@ export const DivRow = styled.div`
   gap: ${(props) => props.gap || "none"};
   justify-content: ${(props) => props.justifyContent || "none"};
   align-items: center;
+  
 `;
 
 export const TitlePages = styled.h1`
   font-weight: 400;
   margin-top: ${(props) => props.marginTop || "none"};
+  
 
   span {
     color: #1bbbff;
@@ -49,6 +54,7 @@ export const TitlePages = styled.h1`
 export const DescriptionPages = styled.p`
   font-weight: 300;
   font-size: 14px;
+  
 `;
 
 export const InputsContent = styled.div`
@@ -57,6 +63,7 @@ export const InputsContent = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  
 `;
 
 export const Select = styled.select`
@@ -69,4 +76,5 @@ export const Select = styled.select`
   color: #f0ffffde;
   font-size: 12px;
   outline: none;
+  
 `;

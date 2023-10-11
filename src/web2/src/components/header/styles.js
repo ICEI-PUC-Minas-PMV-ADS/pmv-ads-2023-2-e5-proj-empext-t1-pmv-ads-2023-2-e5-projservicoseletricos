@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const HeaderStyles = styled.div`
-  background-color: #454545;
+  background-color: #0B93F6; // cor do fundo barra logo header 
   display: flex;
   padding: 10px 20px;
   justify-content: space-between;
   color: #fff;
-  border-bottom: 1px solid #fff3;
+  border-bottom: 1px solid #0B93F6; // linha acima da barra de menu
   position: relative;
   align-items: center;
 
@@ -31,7 +31,7 @@ export const HeaderStyles = styled.div`
 `;
 
 export const ContentNav = styled.nav`
-  background-color: #454545;
+  background-color: #0B93F6; // fundo barra categoria
   display: flex;
   gap: 20px;
   flex: 1;
@@ -140,5 +140,5 @@ export const ImageUser = styled.div`
   border: 2px solid #fff;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center;
 `;
