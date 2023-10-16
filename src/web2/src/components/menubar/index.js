@@ -13,7 +13,7 @@ export default function MenuBar() {
     <Container>
       <Menu>
         <MenuItem onClick={() => handleMenuItemClick("/home")}>Início</MenuItem>
-        <MenuItem onClick={() => handleMenuItemClick("/produtos")}>
+        <MenuItem onClick={() => handleMenuItemClick("/produtos/list")}>
           Produtos 
         </MenuItem>
           <MenuItem onClick={() => handleMenuItemClick("/sobre")}>Sobre</MenuItem> 

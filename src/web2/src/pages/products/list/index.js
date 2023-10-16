@@ -1,39 +1,24 @@
-import React, { useEffect, useState } from "react";
-import { Container } from "../../../styleGlobal/styles";
-import { CardsWrapper } from "./styles";
-import { useQuery } from "react-query";
-import { getProducts } from "../../../services/api/products";
-import Card from "../../../components/card";
-import NotFound from "../../../components/notFound";
+import React from 'react';
+import Header from '../../../components/header';  // Importe o componente Header
+import Footer from '../../../components/footer';  // Importe o componente Footer
+import MenuBar from '../../../components/menubar';  // Importe o componente MenuBar
+import ProdList from '../../../components/ptList';
 
-export default function ProductList() {
-  const [products, setProducts] = useState([]);
-  const { data } = useQuery("products", getProducts);
-
-  useEffect(() => {
-    if (data) {
-      // Filtre os produtos conforme necessário
-      setProducts(data);
-    }
-  }, [data]);
-
+function ProductList() 
+{
   return (
-    <Container>
-      {products.length > 0 ? (
-        <CardsWrapper>
-          {products.map((product, index) => (
-            <Card
-              key={index}
-              name={product.nome}
-              id={product.id}
-              type="produto"
-              // Remova a referência para a função de exclusão
-            />
-          ))}
-        </CardsWrapper>
-      ) : (
-        <NotFound entity="produtos" />
-      )}
-    </Container>
+    <div>
+      <Header />  {/* Renderize o componente Header */}
+      <MenuBar /> {/* Renderize o componente MenuBar */}
+      
+      {/* Conteúdo da página Home */}
+      <div>
+        <ProdList />
+      </div>
+
+      <Footer /> {/* Renderize o componente Footer */}
+    </div>
   );
 }
+
+export default ProductList;

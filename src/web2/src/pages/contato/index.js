@@ -3,16 +3,16 @@ import Header from '../../components/header';  // Importe o componente Header
 import Footer from '../../components/footer';  // Importe o componente Footer
 import MenuBar from '../../components/menubar';  // Importe o componente MenuBar
 
-function Home() 
+function Contato() 
 {
   return (
     <div>
       <Header />  {/* Renderize o componente Header */}
       <MenuBar /> {/* Renderize o componente MenuBar */}
       
-      {/* Conteúdo da página Home */}
+      {/* Conteúdo da página contatp */}
       <div>
-        {/* Seu conteúdo da Home vai aqui */}
+        {/* Seu conteúdo da contato vai aqui */}
       </div>
 
       <Footer /> {/* Renderize o componente Footer */}
@@ -20,4 +20,4 @@ function Home()
   );
 }
 
-export default Home;
+export default Contato;

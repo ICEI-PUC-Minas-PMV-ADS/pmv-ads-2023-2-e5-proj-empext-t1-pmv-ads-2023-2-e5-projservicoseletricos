@@ -15,6 +15,7 @@ import ReportsProducts from "./pages/reportProducts";
 import ProductList from "./pages/products/list";
 import Home from "./pages/home";
 import Sobre from "./pages/sobre";
+import Contato from "./pages/contato";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route path="/home" element={< Home />} />
         <Route path="/sobre" element={< Sobre />} /> 
+        <Route path="/contato" element={< Contato />} />
         <Route path="/products" element={<ProductManagement />} />
         <Route path="/products/list" element={<ProductList />} />
         <Route path="/categorys" element={<CategoryManagement />} />
