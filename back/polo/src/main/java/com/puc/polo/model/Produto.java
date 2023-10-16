@@ -6,13 +6,14 @@ import lombok.*;
 import java.math.BigDecimal;
 
 @Table(name = "produtos")
+@Entity
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Produto {
     @Id
-    @Column(name = "id")
+    @Column(name = "id_produto")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idProduto;
 
