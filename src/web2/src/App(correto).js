@@ -14,12 +14,21 @@ import RegisterSubCategorys from "./pages/subcategorys/register";
 import EditSubcategorys from "./pages/subcategorys/edit";
 import EditUser from "./pages/user";
 import ReportsProducts from "./pages/reportProducts";
+import ProductList from "./pages/products/list";
+import Home from "./pages/home";
+import Sobre from "./pages/sobre";
+import Contato from "./pages/contato";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={< Home />}/>
+        <Route path="/sobre" element={< Sobre/>}/>
+        <Route patch="/contato" element={< Contato />}/>
+        <Route path="/products/list" element={< ProductList />}/>
+        <Route path="/login" element={< Login />} />
         <Route path="/" element={<BaseApplication />}>
           <Route path="products" element={<ProductManagement />}></Route>
           <Route path="categorys" element={<CategoryManagement />} />

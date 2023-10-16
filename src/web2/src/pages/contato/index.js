@@ -1,23 +1,33 @@
 import React from 'react';
-import Header from '../../components/header';  // Importe o componente Header
-import Footer from '../../components/footer';  // Importe o componente Footer
-import MenuBar from '../../components/menubar';  // Importe o componente MenuBar
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import Header from '../../components/header';
+import Footer from '../../components/footer';
+import MenuBar from '../../components/menubar';
 
-function Contato() 
-{
+function Contato() {
+  const phoneNumber = "1234567890"; // Número de telefone, incluindo o código do país
+
+  const openWhatsApp = () => {
+    window.open(`https://wa.me/${phoneNumber}`, "_blank");
+  };
+
   return (
     <div>
-      <Header />  {/* Renderize o componente Header */}
-      <MenuBar /> {/* Renderize o componente MenuBar */}
-      
-      {/* Conteúdo da página contatp */}
+      <Header />
+      <MenuBar />
+
       <div>
-        {/* Seu conteúdo da contato vai aqui */}
+        <button onClick={openWhatsApp}>
+          <FontAwesomeIcon icon={faWhatsapp} /> Abrir WhatsApp
+        </button>
       </div>
 
-      <Footer /> {/* Renderize o componente Footer */}
+      <Footer />
     </div>
   );
 }
 
 export default Contato;
+
+

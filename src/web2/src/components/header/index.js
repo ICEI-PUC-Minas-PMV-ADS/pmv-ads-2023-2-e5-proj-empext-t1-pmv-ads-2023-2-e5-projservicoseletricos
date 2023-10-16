@@ -13,7 +13,7 @@ export default function Header() {
 
   return (
     <HeaderStyles>
-      <img onClick={() => navigate("/products")} src={Polo} alt="logo" />
+      <img onClick={() => navigate("/home")} src={Polo} alt="logo" />
       <RxHamburgerMenu
         className="hamburguer"
         onClick={() => {

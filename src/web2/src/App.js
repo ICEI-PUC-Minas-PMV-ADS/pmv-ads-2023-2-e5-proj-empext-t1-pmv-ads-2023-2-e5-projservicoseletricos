@@ -12,7 +12,7 @@ import RegisterSubCategorys from "./pages/subcategorys/register";
 import EditSubcategorys from "./pages/subcategorys/edit";
 import EditUser from "./pages/user";
 import ReportsProducts from "./pages/reportProducts";
-import ProductList from "./pages/products/list";
+import ProductList from "./pages/list";
 import Home from "./pages/home";
 import Sobre from "./pages/sobre";
 import Contato from "./pages/contato";
@@ -25,7 +25,7 @@ function App() {
         <Route path="/sobre" element={< Sobre />} /> 
         <Route path="/contato" element={< Contato />} />
         <Route path="/products" element={<ProductManagement />} />
-        <Route path="/products/list" element={<ProductList />} />
+        <Route path="/list" element={<ProductList />} />
         <Route path="/categorys" element={<CategoryManagement />} />
         <Route path="/subcategorys" element={<SubcategorysManagement />} />
         <Route path="/products/register" element={<RegisterProduct />} />
@@ -38,7 +38,7 @@ function App() {
         <Route path="/products/report" element={<ReportsProducts />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<SignIn />} />
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );

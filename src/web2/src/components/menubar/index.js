@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Menu, MenuItem } from "./styles";
 import { useNavigate } from "react-router";
+import ProdList from "../ptList";
 
 export default function MenuBar() {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ export default function MenuBar() {
     <Container>
       <Menu>
         <MenuItem onClick={() => handleMenuItemClick("/home")}>Início</MenuItem>
-        <MenuItem onClick={() => handleMenuItemClick("/produtos/list")}>
+        <MenuItem onClick={() => handleMenuItemClick("/list")}>
           Produtos 
         </MenuItem>
           <MenuItem onClick={() => handleMenuItemClick("/sobre")}>Sobre</MenuItem> 
