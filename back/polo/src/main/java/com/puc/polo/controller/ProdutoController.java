@@ -8,13 +8,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.net.http.HttpResponse;
 import java.util.List;
 
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/produtos")
+@RequestMapping("/api/polo-api/v1/produtos")
 public class ProdutoController {
 
     private final ProdutoRepository repository;
@@ -26,6 +25,7 @@ public class ProdutoController {
     }
 
     @GetMapping("{id}")
+    @ResponseStatus(HttpStatus.OK)
     public Produto getById(@PathVariable Integer id){
         return repository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Produto não encontrado"));
