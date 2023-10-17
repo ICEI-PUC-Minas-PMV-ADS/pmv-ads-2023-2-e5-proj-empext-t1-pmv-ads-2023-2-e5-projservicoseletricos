@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.net.http.HttpResponse;
 import java.util.List;
@@ -24,6 +25,13 @@ public class ProdutoController {
         return repository.findAll();
     }
 
+    @GetMapping("{id}")
+    public Produto getById(@PathVariable Integer id){
+        return repository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Produto não encontrado"));
+    }
+
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Produto createProduto(@RequestBody Produto produto) {
@@ -33,22 +41,28 @@ public class ProdutoController {
         return savedProduto;
     }
 
-    @DeleteMapping
+    @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteProduto(@RequestParam Integer id) {
+    public void deleteProduto(@PathVariable Integer id) {
         log.info("Deletando produto de id {}...", id);
         repository.deleteById(id);
         log.info("Produto de id {} deletado.", id);
 
     }
 
-    @PatchMapping
+    @PutMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateProduto(@RequestParam Integer id, @RequestBody Produto produto) {
-        if (repository.existsById(id)) {
-            repository.save(produto);
-        } else {
-            log.info("Produto com id {} não encontrado.", id);
-        }
-    }
+    public void updateProduto(@PathVariable Integer id, @RequestBody Produto produtoAtualizado) {
+        repository
+                .findById(id)
+                .map(servico -> {
+                    produtoAtualizado.setIdProduto(servico.getIdProduto());
+                    repository.save(produtoAtualizado);
+                    return Void.TYPE;
+                })
+                .orElseThrow(() -> {
+                    log.info("Produto não encontrado");
+                    return new ResponseStatusException(HttpStatus.NOT_FOUND, "Produto não encontrado");
+                });
+                }
 }
