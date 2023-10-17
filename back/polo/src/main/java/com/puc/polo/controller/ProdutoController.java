@@ -22,7 +22,6 @@ public class ProdutoController {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<Produto> getProdutos() {
-        log.info("Teste");
         return repository.findAll();
     }
 
