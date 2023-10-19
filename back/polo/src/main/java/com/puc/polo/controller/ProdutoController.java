@@ -15,6 +15,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/produtos")
+@CrossOrigin("http://localhost:3000")
 public class ProdutoController {
 
     private final ProdutoRepository repository;
