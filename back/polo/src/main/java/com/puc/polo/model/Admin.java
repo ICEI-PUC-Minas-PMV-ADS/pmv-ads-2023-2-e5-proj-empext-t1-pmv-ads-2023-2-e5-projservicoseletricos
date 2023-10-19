@@ -26,7 +26,7 @@ import lombok.Setter;
 public class Admin {
 
     @Id
-    @Column(name = "id_produto")
+    @Column(name = "id_Adm")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_Admin;
 

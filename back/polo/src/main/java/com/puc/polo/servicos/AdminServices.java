@@ -43,4 +43,37 @@ public class AdminServices {
 
     }
 
+    //alterar codigo
+
+     public ResponseEntity<?> alterar(Admin AdmModel, String acao) {
+
+        if (AdmModel.getNome().equals("")) {
+            Resposta.setMensagem("O nome é obrigatório!");
+            return new ResponseEntity<RespostaModel>(Resposta, HttpStatus.BAD_REQUEST);
+        } else if (AdmModel.getEmail().equals("")) {
+            Resposta.setMensagem("O email é obrigatório!");
+            return new ResponseEntity<RespostaModel>(Resposta, HttpStatus.BAD_REQUEST);
+        } else if (AdmModel.getSenha().equals("")) {
+            Resposta.setMensagem("A senha é obrigatória!");
+            return new ResponseEntity<RespostaModel>(Resposta, HttpStatus.BAD_REQUEST);
+        } else {
+           if(acao.equals("cadastrar")){
+             return new ResponseEntity<Admin>(AdminRepo.save(AdmModel), HttpStatus.CREATED);
+        }else{
+             return new ResponseEntity<Admin>(AdminRepo.save(AdmModel), HttpStatus.OK);
+        }
+        }
+           }
+
+
+           // METODO PARA DELETAR Admin
+    public ResponseEntity<RespostaModel> deletar(Integer id_Admin){
+    AdminRepo.deleteById(id_Admin);
+    Resposta.setMensagem("Usuario foi removido!");
+    return new ResponseEntity<RespostaModel>(Resposta,HttpStatus.OK);
 }
+
+    }
+
+
+
