@@ -17,7 +17,7 @@ export function AuthProvider({ children }) {
   }
 
   async function signUp(reqData) {
-    const { data } = await http.post("api/Usuarios/", reqData);
+    const { data } = await http.post("/Usuarios/", reqData);
     return data;
   }
 
