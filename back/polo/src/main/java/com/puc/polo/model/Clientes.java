@@ -37,5 +37,9 @@ public class Clientes {
     private String telefone;
     
     private String Endereco;
+
+    public Integer getClienteId() {
+        return null;
+    }
     
 }

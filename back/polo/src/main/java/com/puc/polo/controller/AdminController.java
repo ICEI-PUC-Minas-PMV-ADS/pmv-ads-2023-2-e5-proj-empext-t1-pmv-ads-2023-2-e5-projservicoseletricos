@@ -40,9 +40,9 @@ public ResponseEntity<?> alterar(@RequestBody Admin AdmModel ){
 
 }
 
-@DeleteMapping("/excluir/{id_Admini}")
-public ResponseEntity<RespostaModel>remover(@PathVariable int id_Admin){
-    return AdmServ.deletar(id_Admin);
+@DeleteMapping("/excluir/{id}")
+public ResponseEntity<RespostaModel>remover(@PathVariable int id){
+    return AdmServ.deletar(id);
 }
 
 
