@@ -1,194 +1,61 @@
-import { ContainerText, Input, Label,} from "../../../components/componentsForm/stylesGlobal";
-import ContainerCards from "../../../components/containerCards";
-import ContainerForm from "../../../components/containerForms";
-import FilledButton from "../../../components/filledButton";
-import { CenterSpinner, Container, DescriptionPages, Form, InputsContent, TitlePages,} from "../../../styleGlobal/styles";
-import { createProducts, getProducts } from "../../../services/api/products";
-import { getSubCategorys } from "../../../services/api/subcategorys";
-import Spinner from "../../../components/spinner";
-import useAuth from "../../../context/auth";
-import http from "../../../services/http";
-import SelectPersonality from "../../../components/select";
-import MessageError from "../../../components/messageError";
-import { Formik } from "formik";
-import Card from "../../../components/card";
-import relatorio from "../../../services/relatorio";
-import { useMutation, useQuery, useQueryClient } from "react-query";
-import { useEffect, useState } from "react";
+import { DivRow } from "../../../styleGlobal/styles";
+import { CardStyle } from "./styles";
+import ModalDelete from "../../../components/modalDelete";
+import { FiEdit } from "react-icons/fi";
+import { RiDeleteBin6Line } from "react-icons/ri";
+import { useNavigate } from "react-router";
+import { useState } from "react";
 
-export default function RegisterProduct() {
-  const [loading, setLoading] = useState(false);
-  const [categorys, setCategorys] = useState();
-  const { user } = useAuth();
-  const [filterId, setFilterId] = useState([]);
-  const [category, setCategory] = useState();
-  const [actualCategory, setActualCategory] = useState(0);
-  const [messageError, setMessageError] = useState({
-    type: "",
-    message: "",
-    open: false,
-  });
-  const { data } = useQuery("products", getProducts, {
-    refetchOnMount: false,
-    refetchOnWindowFocus: false,
-  });
-
-  useEffect(() => {
-    http.get(`api/Categorias`).then((res) => {
-      setCategorys(res.data.filter((x) => x.usuarioId === user.id));
-    });
-  }, [user.id]);
-
-  useEffect(() => {
-    let ids = [];
-    categorys &&
-      categorys.forEach((category) => {
-        ids.push(category.id);
-      });
-    setFilterId(ids);
-  }, [categorys]);
-
-  const dataSubcategorys = useQuery("subcategorys", getSubCategorys);
-
-  const client = useQueryClient();
-
-  const mutation = useMutation(createProducts, {
-    onSuccess: () => {
-      setLoading(false);
-      client.invalidateQueries("products");
-      setMessageError({
-        type: "success",
-        message: "Produto cadastrado com sucesso",
-        open: true,
-      });
-      setTimeout(() => {
-        setMessageError({
-          type: "",
-          message: "",
-          open: false,
-        });
-      }, 3000);
-    },
-    onError: (e) => {
-      setLoading(false);
-      setMessageError({
-        type: "error",
-        message: "Erro ao cadastrar produto",
-        open: true,
-      });
-      setTimeout(() => {
-        setMessageError({
-          type: "",
-          message: "",
-          open: false,
-        });
-      }, 3000);
-    },
-  });
-
-  useEffect(() => {
-    const subCategorias = dataSubcategorys.data
-      ? dataSubcategorys.data.filter(
-          (x) => filterId && filterId.includes(x.categoriaId)
-        )
-      : [];
-
-    setCategory(subCategorias);
-  }, [filterId, dataSubcategorys.data]);
-
+export default function Card(props) {
+  const [modal, setModal] = useState(false);
+  const [type, setType] = useState();
+  const navigate = useNavigate();
   return (
-    <Container>
-      {category && category[actualCategory] ? (
-        <>
-          <ContainerForm>
-            <Formik
-              initialValues={{
-                nome: "",
-                quantidade: "",
-                subCategoriaId: category[0] && category[0].id,
+    <CardStyle {...props}>
+      <div>
+        {props.image && (
+          <img
+            src={props.image} // Adicione a propriedade "image" com a URL da imagem
+            alt={props.name}
+            style={{ width: "100px", height: "100px" }} // Estilize conforme necessário
+          />
+        )}
+        <h2>{props.name}</h2>
+        {props.amount && <p>Quantidade: {props.amount}</p>}
+      </div>
+
+      <DivRow gap="10px">
+        {!props.max && (
+          <>
+            <FiEdit
+              style={{ fontSize: "25px", cursor: "pointer" }}
+              onClick={() => {
+                navigate(`edit/${props.id}`);
               }}
-              onSubmit={(values) => {
-                setLoading(true);
-                mutation.mutate(values);
-                relatorio
-                  .post("/products", {
-                    nome: values.nome,
-                    quantidade: values.quantidade,
-                    data_registro: new Date(),
-                  })
-                  
+            />
+            <RiDeleteBin6Line
+              style={{
+                fontSize: props.max ? "40px" : "25px",
+                cursor: "pointer",
               }}
-            >
-              {(props) => (
-                <Form onSubmit={props.handleSubmit}>
-                  <TitlePages>
-                    <span>Cadastrar</span> produto
-                  </TitlePages>
-                  <DescriptionPages>
-                    Ao lado é exibido os produtos relacionados a categoria do
-                    formulário. O produto será adicionado a lista de produtos da
-                    categoria informada.
-                  </DescriptionPages>
-                  <InputsContent>
-                    <ContainerText>
-                      <Label>Nome</Label>
-                      <Input
-                        type="text"
-                        name="nome"
-                        onChange={props.handleChange}
-                      />
-                      <Label>Quantidade</Label>
-                      <Input
-                        type="text"
-                        name="quantidade"
-                        onChange={props.handleChange}
-                      />
-                      <Label>Subcategoria</Label>
-                      <SelectPersonality
-                        value={
-                          category[actualCategory] &&
-                          category[actualCategory].nome
-                        }
-                        itensList={category}
-                        setActualCategory={setActualCategory}
-                        onChange={(value) => {
-                          props.setFieldValue("subCategoriaId", value);
-                        }}
-                      />
-                    </ContainerText>
-                    <FilledButton type="submit" loading={loading}>
-                      Cadastrar
-                    </FilledButton>
-                    {messageError && (
-                      <MessageError
-                        type={messageError.type}
-                        message={messageError.message}
-                        display={messageError.open}
-                      />
-                    )}
-                  </InputsContent>
-                </Form>
-              )}
-            </Formik>
-          </ContainerForm>
-          <ContainerCards>
-            {category &&
-              category[actualCategory] &&
-              data &&
-              data.map((product) => {
-                return (
-                  product.subCategoriaId === category[actualCategory].id && (
-                    <Card key={product.id} name={product.nome} />
-                  )
-                );
-              })}
-          </ContainerCards>
-        </>
-      ) : (
-        <CenterSpinner>
-          <Spinner size="30px" />
-        </CenterSpinner>
+              onClick={() => {
+                setModal(true);
+                setType(props.type);
+              }}
+            />
+          </>
+        )}
+      </DivRow>
+      {modal && (
+        <ModalDelete
+          type={type}
+          item={props.name}
+          closeModal={setModal}
+          id={props.id}
+          api={props.api}
+          invalidateQuery={props.invalidateQuery}
+        />
       )}
-    </Container>
+    </CardStyle>
   );
 }

@@ -15,6 +15,11 @@ import NotFound from "../../../components/notFound";
 import { Fragment, useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { BsArrowLeft } from "react-icons/bs";
+import ProductForm from '../../../components/ProductForm';
+import Modal from "react-modal";
+
+
+
 
 export default function ProductManagement() {
   const [actualSubCatgory, setActualSubCategory] = useState(0);
@@ -25,6 +30,17 @@ export default function ProductManagement() {
   const [filterId, setFilterId] = useState();
   const [subcategory, setSubcategory] = useState();
   const [filterAmount, setFilterAmount] = useState();
+  const [showModal, setShowModal] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+  
+  const closeModal = () => {
+    setShowModal(false);
+  };
 
   const categorys = useQuery("categorysProduct", getCategorys, {
     onSuccess: (data) => {
@@ -91,6 +107,7 @@ export default function ProductManagement() {
             <ButtonBack onClick={() => setShowProducts(false)}>
               <BsArrowLeft className="icon" />
             </ButtonBack>
+            <ProductForm onClick={openModal}>Cadastro de Produto</ProductForm>
             <SideManager type="produtos" amount={filterAmount.length} />
             <CardsWrapper>
               {filterAmount &&
@@ -116,6 +133,7 @@ export default function ProductManagement() {
               )}
             </CardsWrapper>
           </ContainerCards>
+
         </Fragment>
       ) : (
         <NotFound entity="produtos" />

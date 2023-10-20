@@ -16,6 +16,7 @@ import ProductList from "./pages/list";
 import Home from "./pages/home";
 import Sobre from "./pages/sobre";
 import Contato from "./pages/contato";
+import ProductForm from "./components/ProductForm";
 
 function App() {
   return (
@@ -28,8 +29,9 @@ function App() {
         <Route path="/list" element={<ProductList />} />
         <Route path="/categorys" element={<CategoryManagement />} />
         <Route path="/subcategorys" element={<SubcategorysManagement />} />
-        <Route path="/products/register" element={<RegisterProduct />} />
+        <Route path="/products/register" element={<ProductForm />} />
         <Route path="/categorys/register" element={<RegisterCategorys />} />
+        <Route path="/products/managament" element={<ProductManagement/>} />
         <Route path="/subcategorys/register" element={<RegisterSubCategorys />} />
         <Route path="/products/edit/:id" element={<EditProducts />} />
         <Route path="/categorys/edit/:id" element={<EditCategorys />} />

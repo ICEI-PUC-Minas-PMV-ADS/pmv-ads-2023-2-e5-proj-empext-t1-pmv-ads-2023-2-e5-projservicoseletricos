@@ -3,7 +3,7 @@ import { Container } from "../../styleGlobal/styles";
 import { CardsWrapper } from "./styles";
 import { useQuery } from "react-query";
 import { getProducts } from "../../services/api/products";
-import Card from "../card";
+import SCard from "../cardL";
 import NotFound from "../notFound";
 
 export default function ProdList() {
@@ -22,7 +22,7 @@ export default function ProdList() {
       {products.length > 0 ? (
         <CardsWrapper>
           {products.map((product, index) => (
-            <Card
+            <SCard
               key={index}
               name={product.nome}
               id={product.id}
