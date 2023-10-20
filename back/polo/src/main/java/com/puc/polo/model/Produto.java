@@ -28,4 +28,11 @@ public class Produto {
 
     @Column(name = "image_path")
     private String imagePath;
+
+    public Object getDescricao() {
+        return null;
+    }
+
+    public void setDescricao(Object descricao) {
+    }
 }
