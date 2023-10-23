@@ -2,7 +2,6 @@ package com.puc.polo.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.math.BigDecimal;
 
 @Table(name = "produtos")
@@ -26,8 +25,13 @@ public class Produto {
     @Column(name = "preco")
     private BigDecimal preco;
 
+    @Lob
     @Column(name = "image_path")
-    private String imagePath;
+    private byte[] imageData;
+
+    @Column(name="descricao")
+    private String descricao;
+ 
 
     public Object getDescricao() {
         return null;
@@ -35,4 +39,15 @@ public class Produto {
 
     public void setDescricao(Object descricao) {
     }
+
+    // Create a method to set the image data
+    public void setImageData(byte[] imageData) {
+        this.imageData = imageData;
+    }
+
+    // Create a method to get the image data
+    public byte[] getImageData() {
+        return imageData;
+    }
 }
+
