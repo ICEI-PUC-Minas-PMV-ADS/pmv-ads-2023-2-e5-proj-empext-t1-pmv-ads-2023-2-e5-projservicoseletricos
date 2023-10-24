@@ -9,7 +9,7 @@ export function AuthProvider({ children }) {
   const [token, setToken] = useState(localStorage.getItem("token"));
 
   async function login(reqData) {
-    const { data } = await http.post("api/Usuarios/Autenticacao", reqData);
+    const { data } = await http.post("auth/login", reqData);
     localStorage.setItem("user", JSON.stringify(data && data.dbusuario));
     setUser(data && data.dbusuario);
     localStorage.setItem("token", data && data.jwtToken);
@@ -17,7 +17,7 @@ export function AuthProvider({ children }) {
   }
 
   async function signUp(reqData) {
-    const { data } = await http.post("/Usuarios/", reqData);
+    const { data } = await http.post("auth/register", reqData);
     return data;
   }
 
