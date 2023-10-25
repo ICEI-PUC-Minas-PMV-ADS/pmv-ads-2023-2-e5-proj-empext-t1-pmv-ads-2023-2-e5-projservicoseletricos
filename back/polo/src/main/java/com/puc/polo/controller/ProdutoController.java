@@ -2,14 +2,17 @@ package com.puc.polo.controller;
 
 import com.puc.polo.model.Produto;
 import com.puc.polo.repositories.ProdutoRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.net.http.HttpResponse;
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @RestController
@@ -26,7 +29,7 @@ public class ProdutoController {
     }
 
     @GetMapping("{id}")
-    public Produto getById(@PathVariable Integer id){
+    public Produto getById(@PathVariable Integer id) {
         return repository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Produto não encontrado"));
     }
@@ -64,5 +67,12 @@ public class ProdutoController {
                     log.info("Produto não encontrado");
                     return new ResponseStatusException(HttpStatus.NOT_FOUND, "Produto não encontrado");
                 });
-                }
+    }
+
+    @GetMapping("{idCategoria, idSubcategoria}")
+    @ResponseStatus(HttpStatus.OK)
+    public Produto findProdutoByIdCategoriaOrIdSubcategoria(@PathVariable Integer idCategoria, @PathVariable Integer idSubcategoria) throws ChangeSetPersister.NotFoundException {
+        return repository.findByCategoriaOrSubcategoria(idCategoria, idSubcategoria)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Produto não encontrado"));
+    }
 }
