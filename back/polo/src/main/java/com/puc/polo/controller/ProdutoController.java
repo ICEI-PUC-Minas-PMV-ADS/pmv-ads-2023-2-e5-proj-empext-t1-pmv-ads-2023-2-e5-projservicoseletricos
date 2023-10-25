@@ -69,7 +69,7 @@ public class ProdutoController {
                 });
     }
 
-    @GetMapping("{idCategoria, idSubcategoria}")
+    @GetMapping("/filter/{idCategoria, idSubcategoria}")
     @ResponseStatus(HttpStatus.OK)
     public Produto findProdutoByIdCategoriaOrIdSubcategoria(@PathVariable Integer idCategoria, @PathVariable Integer idSubcategoria) throws ChangeSetPersister.NotFoundException {
         return repository.findByCategoriaOrSubcategoria(idCategoria, idSubcategoria)
