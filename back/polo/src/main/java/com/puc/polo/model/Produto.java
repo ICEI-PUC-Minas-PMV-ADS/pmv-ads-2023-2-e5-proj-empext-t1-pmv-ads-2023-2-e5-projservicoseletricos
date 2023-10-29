@@ -28,4 +28,12 @@ public class Produto {
 
     @Column(name = "image_path")
     private String imagePath;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_categoria", referencedColumnName = "id_categoria")
+    private Categoria categoria;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_subcategoria", referencedColumnName = "id_subcategoria")
+    private Subcategoria subcategoria;
 }
