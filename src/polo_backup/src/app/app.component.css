@@ -1,0 +1,53 @@
+
+footer{
+    background-color: dodgerblue;
+    color: white;
+    position:fixed;
+    height: 100px; 
+    bottom: 0; 
+    width: 100%;
+    text-align: center;
+}
+strong{
+    color: lightgray;
+}
+
+nav{
+    background-color: dodgerblue;
+    color: white;
+
+}
+img{
+    width: 200px;
+    height: 100px;
+}
+
+a{
+    color: white;
+   
+}
+
+#login{
+    margin-right: 20px;
+}
+
+#navbarHeader{
+    background-color: white;
+    color: dodgerblue;
+    padding-left: 30px;
+    text-align: end;
+    width: 100%;
+    position: relative;
+    height: 30px;
+}
+
+#logoemail{
+width: 30px;
+height: 30px;
+}
+
+#mail{
+    color: dodgerblue;
+    font-weight: bold;
+    text-decoration: none;
+}

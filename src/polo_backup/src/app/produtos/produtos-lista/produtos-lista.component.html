@@ -1,0 +1,12 @@
+<h1 class="mt-4">Produtos</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active" style="color: dodgerblue;">Lista de produtos para encomenda</li>
+</ol>
+
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col mb-5" *ngFor="let item of produtos">
+            <app-produto-card [produto]= "item"></app-produto-card>
+        </div>
+    </div>
+</div>
