@@ -1,0 +1,39 @@
+.card-header,
+.card-footer {
+  background-color: dodgerblue;
+  color: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  font-size: small;
+}
+
+label {
+  color: blue;
+  font-weight: bold;
+}
+
+#btnSair {
+  float: inline-end;
+  font-size: medium;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  line-height: 12.5px;
+  position: absolute;
+  top: -20px; /* Deslocamento para cima */
+  right: -20px; /* Deslocamento para a direita */
+}
+
+#modalLogin {
+  z-index: 3;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

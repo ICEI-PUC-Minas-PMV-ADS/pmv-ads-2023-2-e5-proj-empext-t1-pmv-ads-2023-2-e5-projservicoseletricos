@@ -1,0 +1,5 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home3/poloen81/public_html
+    - back/polo/src/main/java/com/puc/polo/PoloApplication.java $DEPLOYPATH
+    - src/web2/src/App(correto).js $DEPLOYPATH
