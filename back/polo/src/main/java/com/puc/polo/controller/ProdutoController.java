@@ -69,10 +69,10 @@ public class ProdutoController {
                 });
     }
 
-    @GetMapping("/filter/{idCategoria, idSubcategoria}")
+    @GetMapping("/filter/{idsCategoria}")
     @ResponseStatus(HttpStatus.OK)
-    public Produto findProdutoByIdCategoriaOrIdSubcategoria(@PathVariable Integer idCategoria, @PathVariable Integer idSubcategoria) throws ChangeSetPersister.NotFoundException {
-        return repository.findByCategoriaOrSubcategoria(idCategoria, idSubcategoria)
+    public Produto findProdutoByIdCategoriaOrIdSubcategoria(@PathVariable List<Integer> idsCategoria) throws ChangeSetPersister.NotFoundException {
+        return repository.findByCategoriaOrSubcategoria(idsCategoria)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Produto não encontrado"));
     }
 }

@@ -7,10 +7,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
 public interface ProdutoRepository extends JpaRepository<Produto, Integer> {
-    @Query(value = "FROM Produto where categoria.id = :idCategoria or subcategoria.id = :idSubcategoria")
-    Optional<Produto> findByCategoriaOrSubcategoria(@Nullable Integer idCategoria, @Nullable Integer idSubcategoria);
+    @Query(value = "FROM Produto where categoria.id in (:ids) or subcategoria.id in (:ids)")
+    Optional<Produto> findByCategoriaOrSubcategoria(@Nullable List<Integer> ids);
 }
