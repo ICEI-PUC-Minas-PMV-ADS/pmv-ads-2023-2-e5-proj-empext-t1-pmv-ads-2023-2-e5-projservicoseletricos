@@ -14,7 +14,7 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/servicos")
+@RequestMapping("/api/servicos")
 public class ServicoController {
 
     private final ServicoRepository repository;

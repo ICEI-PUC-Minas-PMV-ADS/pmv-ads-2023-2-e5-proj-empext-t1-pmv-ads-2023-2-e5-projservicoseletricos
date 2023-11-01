@@ -20,12 +20,21 @@ public class Produto {
     @Column(name = "nome")
     private String nome;
 
+    @Column(name = "marca")
+    private String marca;
+
+    @Column(name = "garantia")
+    private char garantia;
+
+    @Column(name = "especificacoes")
+    private String especificacoes;
+
     @Column(name = "quantidade")
     private Integer quantidade;
 
     @Column(name = "preco")
     private BigDecimal preco;
 
-    @Column(name = "image_path")
-    private String imagePath;
+    @Column(name = "image")
+    private String image;
 }

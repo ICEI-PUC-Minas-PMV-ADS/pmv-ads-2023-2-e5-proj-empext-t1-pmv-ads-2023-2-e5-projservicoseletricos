@@ -23,6 +23,6 @@ public class ServicosOferecidos {
 
     private String descricao;
 
-    private String imagePath;
+    private String image;
 
 }
