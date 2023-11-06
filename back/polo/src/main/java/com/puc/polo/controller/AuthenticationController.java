@@ -8,11 +8,13 @@ import com.puc.polo.model.User;
 import com.puc.polo.repositories.UserRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("auth")
@@ -30,11 +32,13 @@ public class AuthenticationController {
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody @Valid AuthenticationDTO data){
         var userNamePassword = new UsernamePasswordAuthenticationToken(data.email(), data.senha());
-        var auth = this.authenticationManager.authenticate(userNamePassword);
-
-        var token = tokenService.generateToken((User)auth.getPrincipal());
-
-        return ResponseEntity.ok(new LoginResponseDTO(token));
+        try{
+            var auth = this.authenticationManager.authenticate(userNamePassword);
+            var token = tokenService.generateToken((User)auth.getPrincipal());
+            return ResponseEntity.ok(new LoginResponseDTO(token));
+        } catch (Exception e){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Login ou senha inválidos");
+        }
     }
 
     @PostMapping("/register")
