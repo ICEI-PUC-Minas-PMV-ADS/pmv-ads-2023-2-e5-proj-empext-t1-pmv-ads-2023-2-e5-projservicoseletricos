@@ -8,7 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.net.http.HttpResponse;
 import java.util.List;
 
 @Slf4j
@@ -65,4 +64,10 @@ public class ProdutoController {
                     return new ResponseStatusException(HttpStatus.NOT_FOUND, "Produto não encontrado");
                 });
                 }
+
+    @GetMapping("/filtrar/{idCategoria}")
+    public List<Produto> filtrarPorCategoria(@PathVariable Integer idCategoria){
+        return repository.findByIdCategoria(idCategoria);
+    }
+
 }
