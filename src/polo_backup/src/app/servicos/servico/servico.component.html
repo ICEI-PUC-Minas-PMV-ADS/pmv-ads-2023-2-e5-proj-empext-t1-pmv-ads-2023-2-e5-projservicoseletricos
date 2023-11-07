@@ -1,11 +1,30 @@
 <div class="row">
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">{{ servico.nome }}</h5>
-          <p class="card-text">{{ servico.descricao }}</p>
-          <a href="#" class="btn btn-primary">Detalhes</a>
-        </div>
+  <div class="col">
+    <div class="card m-2 ">
+      <div class="card-body">
+        <h5 class="card-title">{{ servico.nome }}</h5>
+        <p class="card-text" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{
+          servico.descricao }}</p>
+        <button class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#modal-' + servico.idServico">Detalhes</button>
       </div>
     </div>
   </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" [id]="'modal-' + servico.idServico" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header bg-primary ">
+              <h1 class="modal-title fs-5 text-light ">{{ servico.nome }}</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              {{ servico.descricao }}
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary btn-sm " data-bs-dismiss="modal">Fechar</button>
+          </div>
+      </div>
+  </div>
+</div>

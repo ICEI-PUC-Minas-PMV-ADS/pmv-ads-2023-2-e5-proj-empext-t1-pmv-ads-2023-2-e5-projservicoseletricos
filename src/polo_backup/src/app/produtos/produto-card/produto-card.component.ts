@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Produto } from '../produto';
 import { ProdutosService } from 'src/app/produtos.service';
 
@@ -7,16 +7,67 @@ import { ProdutosService } from 'src/app/produtos.service';
   templateUrl: './produto-card.component.html',
   styleUrls: ['./produto-card.component.css']
 })
-export class ProdutoCardComponent {
+export class ProdutoCardComponent implements OnInit {
 
   @Input() produto: Produto;
+  @Output() successMessage = new EventEmitter<string>();
+  @Output() errorMessage = new EventEmitter<string>();
+  @Output() editMessage = new EventEmitter<string>();
+  @Output() adicionarAoCarrinho = new EventEmitter<Produto>();
+  @Output() removerDoCarrinho = new EventEmitter<number>();
+  oculto: boolean;
 
+  produtoEditado: Produto;
   usuarioLogado: boolean = localStorage.getItem("access_token") != null;
 
   constructor(private service: ProdutosService){}
 
-  deletar(){
+  ngOnInit(): void {
+    this.oculto = true;
+  }
 
+  deletar(){  
+    this.service.delete(this.produto.idProduto)
+      .subscribe({
+        next: response => {
+          this.successMessage.emit(this.produto.nome + " excluído com sucesso!")
+          this.ngOnInit();
+        },
+        error: error => {
+          this.errorMessage.emit("Erro inesperado ao excluir")
+        }
+      });
+  }
+
+  editar(produtoEditado: Produto){
+    console.log(produtoEditado);
+    this.service.update(produtoEditado)
+    .subscribe({
+      next: response => {
+        this.editMessage.emit(produtoEditado.nome + " editado com sucesso!");
+      },
+      error: error => {
+        this.errorMessage.emit("Erro inesperado ao editar")
+      }
+    })
+  }
+
+  abrir(event: any){
+    event.preventDefault();
+    this.oculto = false;
+  }
+
+  fechar(event: any){
+    event.preventDefault();
+    this.oculto = true;
+  }
+
+  addProduto(){
+    this.adicionarAoCarrinho.emit(this.produto);
+  }
+
+  removeProduto(){
+    this.removerDoCarrinho.emit(this.produto.idProduto);
   }
 
 

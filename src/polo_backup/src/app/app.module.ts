@@ -11,6 +11,7 @@ import { AuthService } from './auth.service';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ServicosModule } from './servicos/servicos.module';
+import { CategoriasService } from './categorias.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ServicosModule } from './servicos/servicos.module';
   ],
   providers: [
     ProdutosService,
-    AuthService
+    AuthService,
+    CategoriasService
   ],
   bootstrap: [AppComponent]
 })

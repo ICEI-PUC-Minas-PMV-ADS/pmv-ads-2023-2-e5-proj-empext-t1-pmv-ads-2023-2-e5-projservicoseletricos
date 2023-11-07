@@ -1,20 +1,27 @@
-
-  
-
-<nav class="navbar navbar-expand-lg" id="navbarHeader">
-  <div class="col-8 justify-content-around d-flex">
-    <a href="mailto:contato@polo.com.br" id="mail"
-      ><img
-        src="../assets/email_blue.ico"
-        alt=""
-        id="logoemail"
-      /> contato@polo.com.br</a
-    >
-    <a href="https://wa.me/191234567890" id="mail"><img alt="Chat on WhatsApp" src="../assets/whatsicon.png" id="logoemail"> (19)1234567890</a>
+<nav class="container-fluid" id="navbarHeader">
+  <div class="row">
+    <div class="col-6">
+      <a href="mailto:contato@polo.com.br" id="mail" class="float-start"
+        ><img src="../assets/email_blue.ico" alt="" id="logoemail" />
+        contato@polo.com.br</a
+      >
+    </div>
+    <div class="col-6">
+      <a href="https://wa.me/+5519995573590" id="mail" class="float-end"
+        ><img
+          alt="Chat on WhatsApp"
+          src="../assets/whatsicon.png"
+          id="logoemail"
+        />
+        (19)99557-3590</a
+      >
+    </div>
   </div>
 </nav>
-<nav class="navbar navbar-expand-lg justify-content-around d-flex">
-  <div class="container-fluid">
+<nav
+  class="navbar navbar-expand-lg justify-content-around d-flex container-fluid"
+>
+  <div class="container me-xl-5">
     <a class="navbar-brand" href="#"><img src="../assets/polo_logo.jpg" /></a>
     <button
       class="navbar-toggler"
@@ -45,24 +52,135 @@
           <a class="nav-link" routerLink="#">Contato</a>
         </li>
       </ul>
-      <li class="nav-item d-flex">
-        <a class="nav-link" id="login" routerLink="/login">{{
-          usuarioLogado ? "Bem vindo(a)" : "Login"
-        }}</a>
-      </li>
+      <!--Carinho de compra-->
+      <div
+        class="float-end position-relative "
+        style="
+        display: flex;
+          width: 50px;
+          height: 50px;
+          background-color: dodgerblue;
+          border: 1px solid white;
+          justify-content: center;
+          align-items: center;
+          border-radius:10px;
+          cursor:pointer;
+          right: 100px;
+        "
+        data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+
+      >
+      
+          <img
+            src="../assets/carrinho-de-compras.png"
+            alt=""
+            id="shoppingCar"
+          />
+          <span
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+          >
+            +1
+            <span class="visually-hidden">unread messages</span>
+          </span>
+   
+      </div>
+      <!--Fim carrinho de compra-->
+
+      <div class="row">
+        <div class="nav-item d-flex">
+          <a
+            class="nav-link"
+            id="login"
+            routerLink="/login"
+            *ngIf="!usuarioLogado"
+            >Login</a
+          >
+        </div>
+
+        <div class="col" *ngIf="usuarioLogado">
+          <div>Bem vindo(a), {{ email }}</div>
+          <div>
+            <a href="#" (click)="deslogar()" style="text-decoration: none">
+              <img
+                src="../assets/log-out.png"
+                alt=""
+                id="logout"
+                srcset=""
+                title="Sair"
+              />
+              Logout</a
+            >
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
+
 <main>
-  <div class="container-fluid">
+  <div class="container-fluid" style="margin-bottom: 7rem">
     <router-outlet></router-outlet>
   </div>
-  <footer class="py-2 mt-auto">
-
-  <hr>
-    <div class="container-fluid">
-        <div><strong>Copyright &copy; POLO ENGENHARIA E COMERCIO DE MATERIAIS ELETRICOS LTDA</strong></div>
+  <footer class="py-5 mt-auto">
+    <div class="container bottom-0">
+      <div class="row">
+        <div class="col justify-content-center align-content-center">
+          <img src="../assets/polo_logo.jpg" />
+        </div>
+        <div class="col text-start bg-g">
+          <ul class="">
+            <ol class="mb-1">
+              <a href="home">HOME</a>
+            </ol>
+            <ol class="mb-1">
+              <a href="*">SERVIÇOS</a>
+            </ol>
+            <ol class="mb-1">
+              <a href="/produtos">PRODUTOS</a>
+            </ol>
+            <ol class="mb-1">
+              <a href="*">EMPRESA</a>
+            </ol>
+          </ul>
+        </div>
+        <div class="col d-block text-start">
+          <strong>Endereço:</strong>
+          <p class="h6">Rua Luiz Vicentim Sobrinho, 30</p>
+          <p class="h6">Barão Geraldo - 13084-30,</p>
+          <p class="h6">Campinas-SP</p>
+        </div>
+        <div class="col d-block text-start">
+          <strong>Contato:</strong><br />
+          <p class="h6">Telefone: (19)123456789</p>
+          <p class="h6">Vendas: contato@polo.com.br</p>
+        </div>
+      </div>
+      <hr />
+      <div>
+        <strong
+          >Copyright &copy; POLO ENGENHARIA E COMERCIO DE MATERIAIS ELETRICOS
+          LTDA</strong
+        >
+      </div>
     </div>
   </footer>
+  
 </main>
-
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-primary ">
+        <h5 class="modal-title text-light " id="staticBackdropLabel">Produtos Adicionados</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Ao clicar em enviar, os produtos adionados serão enviados para orçamento.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Voltar</button>
+        <button type="button" class="btn btn-primary btn-sm">Enviar</button>
+      </div>
+    </div>
+  </div>
+</div>

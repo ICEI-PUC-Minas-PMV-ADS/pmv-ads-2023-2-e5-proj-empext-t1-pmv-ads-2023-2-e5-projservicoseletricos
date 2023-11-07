@@ -1,5 +1,5 @@
 export class Servico{
-    id: number;
+    idServico: number;
     nome: string;
     descricao: string;
 }
