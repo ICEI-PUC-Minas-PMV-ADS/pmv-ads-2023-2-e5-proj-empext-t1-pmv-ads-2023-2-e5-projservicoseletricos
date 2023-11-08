@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Servico } from '../servico';
+import { ServicosService } from 'src/app/servicos.service';
 
 @Component({
   selector: 'app-servico',
@@ -8,4 +9,25 @@ import { Servico } from '../servico';
 })
 export class ServicoComponent {
   @Input() servico: Servico; 
+  @Output() servicoExcluido = new EventEmitter<string>();
+  @Output() erroAoExcluir = new EventEmitter<string>();
+  @Output() servicoEditado = new EventEmitter<string>();
+
+  usuarioLogado: boolean = localStorage.getItem("access_token") != null;
+
+  constructor(
+    private service: ServicosService
+  ){}
+
+  excluirServico(){
+    this.service.delete(this.servico.idServico).subscribe({
+      next: response => {
+        this.servicoExcluido.emit(this.servico.nome + " excluído com sucesso!");
+      },
+      error: errorResponse => {
+        this.erroAoExcluir.emit("Erro inesperado ao tentar excluir " + this.servico.nome);
+      }
+    })
+  }
+
 }

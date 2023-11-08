@@ -1,12 +1,27 @@
-
 <h1>Serviços</h1>
 
-    <p>A Polo é uma empresa de engenharia fundada em 2011 com o objetivo de empreender tanto no ramo de serviços de engenharia elétrica (manutenção, instalação, análise e projetos) como no comércio de materiais e equipamentos elétricos. O foco da empresa desde então tem sido a busca por soluções personalizadas à demanda dos nossos clientes, entre os principais estão:</p>
+<p>A Polo é uma empresa de engenharia fundada em 2011 com o objetivo de empreender tanto no ramo de serviços de
+    engenharia elétrica (manutenção, instalação, análise e projetos) como no comércio de materiais e equipamentos
+    elétricos. O foco da empresa desde então tem sido a busca por soluções personalizadas à demanda dos nossos clientes,
+    entre os principais estão:</p>
+
+<div class="col-md-12">
+    <div class="alert alert-success" role="alert" *ngIf="sucesso">
+        {{ sucessoMsg }}
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="erro">
+        {{ erroMsg }}
+    </div>
+    <div class="alert alert-warning" role="alert" *ngIf="edit">
+        {{ editMsg }}
+    </div>
+</div>
 
 <div class="container">
     <div class="row align-items-center">
         <div *ngFor="let item of servicos">
-           <app-servico [servico]="item"></app-servico>
+            <app-servico [servico]="item" (servicoExcluido)="exibirSucesso($event)" (erroAoExcluir)="exibirErro($event)"
+                (servicoEditado)="exibirEditar($event)"></app-servico>
         </div>
     </div>
 </div>
