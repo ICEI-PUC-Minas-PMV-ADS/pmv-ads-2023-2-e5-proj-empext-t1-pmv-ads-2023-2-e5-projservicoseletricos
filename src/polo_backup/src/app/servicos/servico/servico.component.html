@@ -6,9 +6,13 @@
         <p class="card-text" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{
           servico.descricao }}</p>
         <button class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#modal-' + servico.idServico">Detalhes</button>
-        <button type="button" class="btn btn-danger" *ngIf="usuarioLogado" data-bs-toggle="modal"
-            [attr.data-bs-target]="'#modal-editar' + servico.idServico">
+        <button type="button" class="btn" *ngIf="usuarioLogado" data-bs-toggle="modal"
+            [attr.data-bs-target]="'#modal-excluir' + servico.idServico">
             <i class="bi bi-trash3"></i>
+        </button>
+        <button type="button" class="btn" *ngIf="usuarioLogado" data-bs-toggle="modal"
+            [attr.data-bs-target]="'#modal-editar' + servico.idServico">
+            <i class="bi bi-pen"></i>
         </button>
       </div>
     </div>
@@ -33,8 +37,8 @@
   </div>
 </div>
 
-<!-- Modal Editar-->
-<div class="modal fade" [id]="'modal-editar' + servico.idServico" tabindex="-1" aria-hidden="true">
+<!-- Modal Excluir-->
+<div class="modal fade" [id]="'modal-excluir' + servico.idServico" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog">
       <div class="modal-content">
           <div class="modal-header bg-primary ">
@@ -48,6 +52,21 @@
               <button type="button" class="btn btn-secondary btn-sm " data-bs-dismiss="modal">Fechar</button>
               <button type="button" class="btn btn-danger btn-sm " data-bs-dismiss="modal" (click)="excluirServico()">Excluir</button>
           </div>
+      </div>
+  </div>
+</div>
+
+<!-- Modal Editar-->
+<div class="modal fade" [id]="'modal-editar' + servico.idServico" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header bg-primary ">
+              <h1 class="modal-title fs-5 text-light ">Editar Serviço</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <app-servico-form 
+          [servico]="this.servico"
+          (servicoAtualizado)="emitirMsgEditado($event)"></app-servico-form>
       </div>
   </div>
 </div>

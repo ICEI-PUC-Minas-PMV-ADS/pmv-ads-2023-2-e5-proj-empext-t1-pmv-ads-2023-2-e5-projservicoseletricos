@@ -1,0 +1,22 @@
+<div class="modal-body">
+    <div class="col-8">
+        <form>
+            <div class="form-group">
+                <label>Nome</label>
+                <input type="text" name="nome" id="nome" class="form-control" [(ngModel)]="servico.nome">
+            </div>
+        
+            <div class="form-group">
+                <label>Descrição</label>
+                <textarea name="descricao" id="descricao" rows="8" style="width: 450px;" class="form-control" [(ngModel)]="servico.descricao"></textarea>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Fechar</button>
+    <button type="submit" class="btn btn-warning btn-sm" data-bs-dismiss="modal" (click)="editar()"
+        *ngIf="!cadastrando">Atualizar</button>
+    <button type="submit" class="btn btn-primary btn-sm" data-bs-dismiss="modal" (click)="cadastrar()"
+        *ngIf="cadastrando">Cadastrar</button>
+</div>

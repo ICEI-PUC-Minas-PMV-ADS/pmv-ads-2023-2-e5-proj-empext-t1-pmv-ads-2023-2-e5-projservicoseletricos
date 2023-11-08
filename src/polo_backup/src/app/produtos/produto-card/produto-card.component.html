@@ -3,9 +3,6 @@
     <div class="card-body">
         <h5 class="card-title">{{ produto.nome }}</h5>
     </div>
-    <!-- <ul class="list-group list-group-flush">
-<li class="list-group-item">Valor (un.): R${{ produto.preco }}</li>
-    </ul> -->
     <div class="card-body">
         <a href="#" (click)="abrir($event)" *ngIf="oculto">Ver mais...</a>
         <div *ngIf="!oculto">

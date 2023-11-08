@@ -5,6 +5,9 @@
     elétricos. O foco da empresa desde então tem sido a busca por soluções personalizadas à demanda dos nossos clientes,
     entre os principais estão:</p>
 
+<button class="btn btn-primary" *ngIf="usuarioLogado" data-bs-toggle="modal" data-bs-target="#modal">Inserir
+    Serviço</button>
+
 <div class="col-md-12">
     <div class="alert alert-success" role="alert" *ngIf="sucesso">
         {{ sucessoMsg }}
@@ -22,6 +25,20 @@
         <div *ngFor="let item of servicos">
             <app-servico [servico]="item" (servicoExcluido)="exibirSucesso($event)" (erroAoExcluir)="exibirErro($event)"
                 (servicoEditado)="exibirEditar($event)"></app-servico>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <h1 class="modal-title fs-5 text-center text-light">
+                    Inserir serviço
+                </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <app-servico-form (servicoCadastrado)="exibirSucesso($event)"></app-servico-form>
         </div>
     </div>
 </div>

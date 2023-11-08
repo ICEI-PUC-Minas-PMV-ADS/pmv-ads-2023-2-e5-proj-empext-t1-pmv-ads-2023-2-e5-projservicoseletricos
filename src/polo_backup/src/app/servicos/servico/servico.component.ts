@@ -30,4 +30,8 @@ export class ServicoComponent {
     })
   }
 
+  emitirMsgEditado(msg: string){
+    this.servicoEditado.emit(msg);
+  }
+
 }

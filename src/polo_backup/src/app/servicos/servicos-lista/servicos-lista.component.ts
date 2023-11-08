@@ -16,6 +16,8 @@ export class ServicosListaComponent implements OnInit {
   editMsg: string;
   edit: boolean = false;
 
+  usuarioLogado: boolean = localStorage.getItem("access_token") != null;
+
   constructor(
     private service: ServicosService
   ){}

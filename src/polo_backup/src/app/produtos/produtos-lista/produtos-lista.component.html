@@ -1,15 +1,11 @@
 <div class="container">
   <h1 class="mt-4 text-center">Produtos</h1>
   <div class="row">
-    
+
 
     <div class="col">
-      <button
-        *ngIf="usuarioLogado"
-        class="btn btn-primary btn-sm float-end"
-        data-bs-toggle="modal"
-        data-bs-target="#modal-cadastro"
-      >
+      <button *ngIf="usuarioLogado" class="btn btn-primary btn-sm float-end" data-bs-toggle="modal"
+        data-bs-target="#modal-cadastro">
         Cadastrar Produto
       </button>
     </div>
@@ -22,8 +18,8 @@
 
   <select class="form-select mb-4" aria-label="Default select example">
     <option selected (click)="filtrarPorCategoria(0)">Filtrar por categoria</option>
-    <option *ngFor="let cat of categorias"
-      [value]="cat.idCategoria" (click)="filtrarPorCategoria(cat.idCategoria)">{{ cat.nome }}
+    <option *ngFor="let cat of categorias" [value]="cat.idCategoria" (click)="filtrarPorCategoria(cat.idCategoria)">{{
+      cat.nome }}
     </option>
   </select>
 
@@ -41,14 +37,9 @@
     </div>
     <div class="row align-items-center">
       <div class="col mb-5" *ngFor="let item of produtos">
-        <app-produto-card
-          [produto]="item"
-          (successMessage)="exibirSucesso($event)"
-          (errorMessage)="exibirErro($event)"
-          (editMessage)="exibirEditar($event)"
-          (adicionarAoCarrinho)="adicionarAoCarrinho($event)"
-          (removerDoCarrinho)="removerDoCarrinho($event)"
-        ></app-produto-card>
+        <app-produto-card [produto]="item" (successMessage)="exibirSucesso($event)" (errorMessage)="exibirErro($event)"
+          (editMessage)="exibirEditar($event)" (adicionarAoCarrinho)="adicionarAoCarrinho($event)"
+          (removerDoCarrinho)="removerDoCarrinho($event)"></app-produto-card>
       </div>
     </div>
   </div>
@@ -60,17 +51,10 @@
           <h1 class="modal-title fs-5 text-center text-light">
             Cadastrar produto
           </h1>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <app-produto-form
-          (enviarMsgSucesso)="exibirSucesso($event)"
-          (enviarMsgErro)="exibirErro($event)"
-        ></app-produto-form>
+        <app-produto-form (enviarMsgSucesso)="exibirSucesso($event)"
+          (enviarMsgErro)="exibirErro($event)"></app-produto-form>
       </div>
     </div>
   </div>

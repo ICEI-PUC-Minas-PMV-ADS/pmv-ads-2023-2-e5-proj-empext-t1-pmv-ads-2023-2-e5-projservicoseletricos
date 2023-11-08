@@ -17,7 +17,7 @@ import { CategoriasService } from './categorias.service';
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
