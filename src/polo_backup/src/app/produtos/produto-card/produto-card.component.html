@@ -14,7 +14,8 @@
         <a href="#" (click)="fechar($event)" *ngIf="!oculto">Ver menos...</a>
     </div>
     <div class="card-body">
-        <button type="button" class="btn btn-outline-success btn-sm" (click)="addProduto()" title="Adiconar ao carrinho"><i class="bi bi-plus"></i></button>
+        <button type="button" class="btn btn-outline-success btn-sm" title="Adiconar ao carrinho" data-bs-toggle="modal"
+        [attr.data-bs-target]="'#modal-adicionar' + produto.idProduto"><i class="bi bi-plus"></i></button>
         <button type="button" class="btn btn-outline-danger btn-sm" (click)="removeProduto()" title="Remover do carrinho"><i class="bi bi-x"></i></button>
         <button type="button" class="btn" *ngIf="usuarioLogado" data-bs-toggle="modal"
             [attr.data-bs-target]="'#modal-' + produto.idProduto">
@@ -55,6 +56,31 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
            <app-produto-form [produto]="this.produto" (editarProduto)="editar($event)"></app-produto-form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Adicionar Produto -->
+<div class="modal fade" [id]="'modal-adicionar' + produto.idProduto" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary ">
+                <h1 class="modal-title fs-5 text-light ">Quantidade</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label>Quantidade: </label>
+                        <input type="number" class="form-control" name="quantidade" placeholder="Quantidade" [(ngModel)]="produto.quantidade" id="quantidade">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm " data-bs-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-primary btn-sm" (click)="addProduto()"
+                    data-bs-dismiss="modal">Adicionar</button>
+            </div>
         </div>
     </div>
 </div>

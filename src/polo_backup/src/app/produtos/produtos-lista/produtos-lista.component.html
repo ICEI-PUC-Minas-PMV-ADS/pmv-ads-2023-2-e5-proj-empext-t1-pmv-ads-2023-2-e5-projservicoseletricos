@@ -16,6 +16,14 @@
     por whatsapp!
   </p>
 
+  <div data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    <img class="carrinho" src="../assets/carrinho-de-compras.png" alt="" id="shoppingCar" />
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+      {{carrinho.length}}
+      <span class="visually-hidden">unread messages</span>
+    </span>
+  </div>
+
   <select class="form-select mb-4" aria-label="Default select example">
     <option selected (click)="filtrarPorCategoria(0)">Filtrar por categoria</option>
     <option *ngFor="let cat of categorias" [value]="cat.idCategoria" (click)="filtrarPorCategoria(cat.idCategoria)">{{
@@ -55,6 +63,37 @@
         </div>
         <app-produto-form (enviarMsgSucesso)="exibirSucesso($event)"
           (enviarMsgErro)="exibirErro($event)"></app-produto-form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Carrinho -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-primary ">
+        <h5 class="modal-title text-light " id="staticBackdropLabel">Produtos Adicionados</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Ao clicar em enviar, os produtos adionados serão enviados para orçamento.</p>
+        <p *ngIf="carrinho.length == 0">Você ainda não adicionou produtos ao carrinho</p>
+        <div class="list-group" *ngIf="carrinho.length > 0">
+          <a class="list-group-item list-group-item-action" *ngFor="let produto of carrinho">
+            <div class="d-flex w-100 justify-content-between" >
+              <h5 class="mb-1">{{ produto.nome }}</h5>
+              <small>R${{produto.preco}}</small>
+            </div>
+            <small>Quantidade: {{produto.quantidade}}</small>
+          </a>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <p style="margin-right: 350px; display: inline;" *ngIf="carrinho.length > 0"><strong>Subtotal: </strong>R${{subtotal}}</p>
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Voltar</button>
+        <button type="button" class="btn btn-primary btn-sm">Enviar</button>
       </div>
     </div>
   </div>

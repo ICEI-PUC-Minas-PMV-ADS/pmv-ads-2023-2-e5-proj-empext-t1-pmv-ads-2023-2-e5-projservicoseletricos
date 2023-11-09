@@ -1,3 +1,11 @@
 h1 {
     color: blue;
 }
+
+.carrinho {
+    width: 75px;
+    margin-left: 1100px;
+    margin-top: 220px;
+    position: fixed;
+    cursor: pointer;
+}

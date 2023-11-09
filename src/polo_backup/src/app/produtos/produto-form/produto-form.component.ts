@@ -54,4 +54,8 @@ export class ProdutoFormComponent implements OnInit {
       })
   }
 
+  limparFormulario(){
+    this.produto = new Produto();
+  }
+
 }

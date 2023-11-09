@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'polo';
+  contato = 'contato@polo.com.br'
   usuarioLogado: boolean = localStorage.getItem("access_token") != null;
   email: string = localStorage.getItem("email") || "";
 

@@ -14,6 +14,7 @@
     </div>
 </div>
 <div class="modal-footer">
+    <button type="button" class="btn btn-light btn-sm" (click)="limparFormulario()">Limpar</button>
     <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Fechar</button>
     <button type="submit" class="btn btn-warning btn-sm" data-bs-dismiss="modal" (click)="editar()"
         *ngIf="!cadastrando">Atualizar</button>

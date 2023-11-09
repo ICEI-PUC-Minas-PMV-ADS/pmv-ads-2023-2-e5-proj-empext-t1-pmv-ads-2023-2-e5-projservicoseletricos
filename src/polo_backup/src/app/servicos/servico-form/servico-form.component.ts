@@ -42,4 +42,8 @@ export class ServicoFormComponent implements OnInit {
     })
   }
 
+  limparFormulario(){
+    this.servico = new Servico();
+  }
+
 }

@@ -22,6 +22,7 @@ export class ProdutosListaComponent implements OnInit{
   usuarioLogado: boolean = localStorage.getItem("access_token") != null;
 
   carrinho: Produto[];
+  subtotal: number;
 
 
   constructor(
@@ -45,6 +46,7 @@ export class ProdutosListaComponent implements OnInit{
     })
 
     this.carrinho = [];
+    this.subtotal = 0;
   }
 
   exibirSucesso(msg: string){
@@ -70,7 +72,8 @@ export class ProdutosListaComponent implements OnInit{
 
   adicionarAoCarrinho(produto: Produto){
     this.carrinho.push(produto);
-    console.log(this.carrinho);
+    if (produto.quantidade == null) produto.quantidade = 1;
+    this.subtotal += produto.preco * produto.quantidade;
   }
 
   removerDoCarrinho(idProduto: number){
