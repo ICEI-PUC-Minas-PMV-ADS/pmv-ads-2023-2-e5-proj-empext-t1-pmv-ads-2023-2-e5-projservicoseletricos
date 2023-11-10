@@ -4,7 +4,7 @@
 
 
     <div class="col">
-      <button *ngIf="usuarioLogado" class="btn btn-primary btn-sm float-end" data-bs-toggle="modal"
+      <button *ngIf="userRole == 'ROLE_ADMIN'" class="btn btn-primary btn-sm float-end" data-bs-toggle="modal"
         data-bs-target="#modal-cadastro">
         Cadastrar Produto
       </button>

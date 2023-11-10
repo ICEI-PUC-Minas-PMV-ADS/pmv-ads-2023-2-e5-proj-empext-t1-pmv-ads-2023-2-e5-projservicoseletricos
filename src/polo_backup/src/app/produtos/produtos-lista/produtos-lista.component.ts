@@ -20,6 +20,8 @@ export class ProdutosListaComponent implements OnInit{
   editMsg: string;
   edit: boolean = false;
   usuarioLogado: boolean = localStorage.getItem("access_token") != null;
+  userRole: string = localStorage.getItem("role") || "";
+
 
   carrinho: Produto[];
   subtotal: number;

@@ -69,6 +69,7 @@ export class LoginComponent implements OnInit {
           const access_token = JSON.stringify(response);
           localStorage.setItem("access_token", access_token);
           localStorage.setItem("email", this.user.email);
+          localStorage.setItem("role", response.roles[0]);
           location.reload();
         },
         error: (errorResponse) => {

@@ -19,6 +19,7 @@ export class ProdutoCardComponent implements OnInit {
 
   produtoEditado: Produto;
   usuarioLogado: boolean = localStorage.getItem("access_token") != null;
+  userRole: string = localStorage.getItem("role") || "";
 
   constructor(private service: ProdutosService){}
 

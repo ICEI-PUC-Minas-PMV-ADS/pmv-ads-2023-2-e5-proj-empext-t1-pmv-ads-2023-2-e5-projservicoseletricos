@@ -6,11 +6,11 @@
         <p class="card-text" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{
           servico.descricao }}</p>
         <button class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#modal-' + servico.idServico">Detalhes</button>
-        <button type="button" class="btn" *ngIf="usuarioLogado" data-bs-toggle="modal"
+        <button type="button" class="btn" *ngIf="userRole == 'ROLE_ADMIN'" data-bs-toggle="modal"
             [attr.data-bs-target]="'#modal-excluir' + servico.idServico">
             <i class="bi bi-trash3"></i>
         </button>
-        <button type="button" class="btn" *ngIf="usuarioLogado" data-bs-toggle="modal"
+        <button type="button" class="btn" *ngIf="userRole == 'ROLE_ADMIN'" data-bs-toggle="modal"
             [attr.data-bs-target]="'#modal-editar' + servico.idServico">
             <i class="bi bi-pen"></i>
         </button>

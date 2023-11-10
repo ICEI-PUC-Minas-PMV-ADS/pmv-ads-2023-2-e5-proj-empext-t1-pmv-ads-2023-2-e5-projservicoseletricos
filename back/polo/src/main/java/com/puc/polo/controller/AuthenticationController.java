@@ -12,9 +12,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("auth")
@@ -34,8 +39,16 @@ public class AuthenticationController {
         var userNamePassword = new UsernamePasswordAuthenticationToken(data.email(), data.senha());
         try{
             var auth = this.authenticationManager.authenticate(userNamePassword);
-            var token = tokenService.generateToken((User)auth.getPrincipal());
-            return ResponseEntity.ok(new LoginResponseDTO(token));
+
+            if (auth.isAuthenticated()){
+                Collection<? extends GrantedAuthority> authorities = auth.getAuthorities();
+
+                List<String> roles =authorities.stream().map(GrantedAuthority::getAuthority).toList();
+                var token = tokenService.generateToken((User)auth.getPrincipal());
+                return ResponseEntity.ok(new LoginResponseDTO(token, roles));
+            } else {
+                throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Usuário ou senha inválidos");
+            }
         } catch (Exception e){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Login ou senha inválidos");
         }
@@ -47,7 +60,8 @@ public class AuthenticationController {
             return ResponseEntity.badRequest().build();
         }
         String encryptedPassword = new BCryptPasswordEncoder().encode(data.senha());
-        User user = new User(data.nome(), data.sobrenome(), data.email(), encryptedPassword);
+        User user = new User(data.nome(), data.sobrenome(), data.email(), encryptedPassword, data.cep(),
+                            data.logradouro(), data.bairro(), data.numero(), data.complemento(), data.empresa(), "USER");
 
         this.userRepository.save(user);
 

@@ -5,7 +5,7 @@
     elétricos. O foco da empresa desde então tem sido a busca por soluções personalizadas à demanda dos nossos clientes,
     entre os principais estão:</p>
 
-<button class="btn btn-primary" *ngIf="usuarioLogado" data-bs-toggle="modal" data-bs-target="#modal">Inserir
+<button class="btn btn-primary" *ngIf="userRole == 'ROLE_ADMIN'" data-bs-toggle="modal" data-bs-target="#modal">Inserir
     Serviço</button>
 
 <div class="col-md-12">

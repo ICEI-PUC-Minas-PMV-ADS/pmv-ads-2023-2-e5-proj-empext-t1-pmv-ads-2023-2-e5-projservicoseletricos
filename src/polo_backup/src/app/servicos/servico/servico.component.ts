@@ -14,6 +14,8 @@ export class ServicoComponent {
   @Output() servicoEditado = new EventEmitter<string>();
 
   usuarioLogado: boolean = localStorage.getItem("access_token") != null;
+  userRole: string = localStorage.getItem("role") || "";
+
 
   constructor(
     private service: ServicosService
