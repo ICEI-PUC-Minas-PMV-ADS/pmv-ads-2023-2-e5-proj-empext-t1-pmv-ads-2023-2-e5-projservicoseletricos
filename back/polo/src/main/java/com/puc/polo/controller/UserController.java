@@ -1,38 +1,33 @@
 package com.puc.polo.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import com.puc.polo.servicos.UserServices;
 import com.puc.polo.model.User;
-import com.puc.polo.model.RespostaModel;
 import com.puc.polo.repositories.UserRepository;
 
-@CrossOrigin("http://localhost:3000")
-@RequestMapping("/Usuarios")
+import java.util.List;
+
 @RestController
+@RequiredArgsConstructor
+@Slf4j
+@RequestMapping("/api/user")
 public class UserController {
 
-  @Autowired
-  private UserServices userService;
-  @GetMapping("/Usuarios")
-  public Iterable<User> listar() {
-    return userService.listar();
+  private final UserRepository repository;
+
+  @GetMapping()
+  @ResponseStatus(HttpStatus.OK)
+  public List<User> getAll() {
+    return repository.findAll();
   }
 
-  @PostMapping("/Usuarios")
-  public ResponseEntity<?> cadastrar(@RequestBody User userModel) {
-    return userService.cadastrar(userModel);
-  }
-
-  @PutMapping("/Usuarios")
-  public ResponseEntity<?> alterar(@RequestBody User userModel) {
-    return userService.alterar(userModel, "alterar");
-  }
-
-  @DeleteMapping("/Usuarios/{id}")
-  public ResponseEntity<RespostaModel> remover(@PathVariable int id) {
-    return userService.deletar(id);
+  @GetMapping("/filtrar")
+  public List<User> filtrarPorNome(
+          @RequestParam(value="nome", required = false, defaultValue = "") String nome)
+  {
+    return repository.findByNome("%" + nome + "%");
   }
 }

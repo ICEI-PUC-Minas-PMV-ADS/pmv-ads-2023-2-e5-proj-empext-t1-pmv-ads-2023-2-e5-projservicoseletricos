@@ -57,7 +57,7 @@ public class AuthenticationController {
     @PostMapping("/register")
     public ResponseEntity register (@RequestBody @Valid RegisterDTO data){
         if (this.userRepository.findByEmail(data.email()) != null){
-            return ResponseEntity.badRequest().build();
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Usuário " + data.email() + " indisponível.");
         }
         String encryptedPassword = new BCryptPasswordEncoder().encode(data.senha());
         User user = new User(data.nome(), data.sobrenome(), data.email(), encryptedPassword, data.cep(),

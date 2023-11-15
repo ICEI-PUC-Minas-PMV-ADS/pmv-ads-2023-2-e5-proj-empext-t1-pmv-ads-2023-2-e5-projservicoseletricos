@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ServicosModule } from './servicos/servicos.module';
 import { CategoriasService } from './categorias.service';
+import { ClientesModule } from './clientes/clientes.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CategoriasService } from './categorias.service';
     ProdutosModule,
     HttpClientModule,
     FormsModule,
-    ServicosModule
+    ServicosModule,
+    ClientesModule
   ],
   providers: [
     ProdutosService,

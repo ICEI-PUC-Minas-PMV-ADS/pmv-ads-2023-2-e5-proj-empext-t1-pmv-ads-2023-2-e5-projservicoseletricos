@@ -10,6 +10,7 @@ export class AppComponent {
   contato = 'contato@polo.com.br'
   usuarioLogado: boolean = localStorage.getItem("access_token") != null;
   email: string = localStorage.getItem("email") || "";
+  userRole: string = localStorage.getItem("role") || "";
 
   deslogar(){
     localStorage.clear();

@@ -28,10 +28,10 @@
           <a class="nav-link" routerLink="/produtos">Produtos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">Empresa</a>
+          <a class="nav-link" routerLink="#">Empresa</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="#">Contato</a>
+        <li class="nav-item" *ngIf="userRole == 'ROLE_ADMIN'">
+          <a class="nav-link" routerLink="/clientes">Clientes</a>
         </li>
       </ul>
 

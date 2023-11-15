@@ -22,9 +22,8 @@ export class ProdutosListaComponent implements OnInit{
   usuarioLogado: boolean = localStorage.getItem("access_token") != null;
   userRole: string = localStorage.getItem("role") || "";
 
-
-  carrinho: Produto[];
-  subtotal: number;
+  carrinho: Produto[] = [];
+  subtotal: number = 0;
 
 
   constructor(
@@ -47,8 +46,7 @@ export class ProdutosListaComponent implements OnInit{
       }
     })
 
-    this.carrinho = [];
-    this.subtotal = 0;
+
   }
 
   exibirSucesso(msg: string){
