@@ -1,12 +1,14 @@
+
+  
 <nav class="container-fluid" id="navbarHeader">
   <div class="row">
-    <div class="col-6">
-      <a href="mailto:contato@polo.com.br" id="mail" class="float-start"><img src="../assets/email_blue.ico" alt=""
+    <div class="col-3 p-0 ">
+      <a href="mailto:contato@polo.com.br" id="mail" class=""><img src="../assets/email_blue.ico" alt=""
           id="logoemail" />
         {{ contato }}</a>
     </div>
-    <div class="col-6">
-      <a href="https://wa.me/+5519995573590" id="mail" class="float-end"><img alt="Chat on WhatsApp"
+    <div class="col-8 p-0 ">
+      <a href="https://wa.me/+5519995573590" id="mail" class="float-end "><img alt="Chat on WhatsApp"
           src="../assets/whatsicon.png" id="logoemail" />
         (19)99557-3590</a>
     </div>
@@ -35,12 +37,12 @@
         </li>
       </ul>
 
-      <div class="row">
-        <div class="nav-item d-flex">
-          <a class="nav-link" id="login" routerLink="/login" *ngIf="!usuarioLogado">Login</a>
+      <div class="col-3 ">
+        <div class="">
+          <a class="nav-link text-center  " id="login" routerLink="/login" *ngIf="!usuarioLogado">Login</a>
         </div>
 
-        <div class="col" *ngIf="usuarioLogado">
+        <div class="row " *ngIf="usuarioLogado">
           <div>Bem vindo(a), {{ email }}</div>
           <div>
             <a href="#" (click)="deslogar()" style="text-decoration: none">
@@ -87,7 +89,7 @@
         </div>
         <div class="col d-block text-start">
           <strong>Contato:</strong><br />
-          <p class="h6">Telefone: (19)123456789</p>
+          <p class="h6">Telefone: (19) 99557-3590</p>
           <p class="h6">Vendas: {{ contato }}</p>
         </div>
       </div>
@@ -98,5 +100,10 @@
       </div>
     </div>
   </footer>
+  <script>
+
+
+
+  </script>
 
 </main>

@@ -1,69 +1,71 @@
-
-footer{
-    background-color: dodgerblue;
-    color: white;
-    height: 300px; 
-    width: 100%;
-    text-align: center;
+footer {
+  background-color: dodgerblue;
+  color: white;
+  height: 300px;
+  width: 100%;
+  text-align: center;
 }
-strong{
-    color: lightgray;
-}
-
-nav{
-    background-color: dodgerblue;
-    color: white;
-    height: 100px;
-    position: fixed;
-    z-index: 10;
-top: 30px;
-}
-img{
-    width: 200px;
-    height: 100px;
+strong {
+  color: lightgray;
 }
 
-a{
-    color: white;
-   text-decoration: none;
+nav {
+  background-color: dodgerblue;
+  color: white;
+  height: 100px;
+  position: fixed;
+  z-index: 9;
+  top: 30px;
+}
+img {
+  width: 200px;
+  height: 100px;
 }
 
-#login{
-    margin-right: 20px;
+#navbarHeader.hidden {
+    display: none;
+  }
+
+a {
+  color: white;
+  text-decoration: none;
 }
 
-#navbarHeader{
-    background-color: white;
-    color: dodgerblue;
-    padding-left: 30px;
-    text-align: end;
-    width: 100%;
-    position: fixed;
-    height: 30px;
-    z-index: 10;
-    top: 0;
+#login {
+  margin-right: 20px;
 }
 
-#logoemail{
-width: 30px;
-height: 30px;
+#navbarHeader {
+  background-color: white;
+  color: dodgerblue;
+  padding-left: 30px;
+  text-align: end;
+  width: 100%;
+  position: fixed;
+  height: 30px;
+  z-index: 10;
+  top: 0;
+
 }
 
-#mail{
-    color: dodgerblue;
-    font-weight: bold;
-    text-decoration: none;
+#logoemail {
+  width: 30px;
+  height: 30px;
 }
 
-#logout{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+#mail {
+  color: dodgerblue;
+  font-weight: bold;
+  text-decoration: none;
 }
 
+#logout {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
 
-#shoppingCar{
-    width: 40px;
-    height: 40px;
-
+#shoppingCar {
+  width: 40px;
+  height: 40px;
 }
