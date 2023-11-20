@@ -4,8 +4,9 @@ h1 {
 
 .carrinho {
     width: 75px;
-    margin-left: 1100px;
-    margin-top: 220px;
+    margin-left: 1290px;
+    margin-top: 280px;
     position: fixed;
     cursor: pointer;
+    z-index: 20;
 }
