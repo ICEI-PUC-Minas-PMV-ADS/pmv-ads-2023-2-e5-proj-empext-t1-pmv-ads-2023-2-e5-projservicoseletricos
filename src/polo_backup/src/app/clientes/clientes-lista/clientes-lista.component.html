@@ -34,6 +34,13 @@
                         <hr>
                         <strong>Empresa: </strong> {{ cliente.empresa != null ? cliente.empresa : "Não informado" }}
                         <hr>
+                        <strong>Produtos orçados anteriormente:</strong> 
+                        <br>
+                        <div *ngIf="cliente.produtos.length > 0">
+                            <ul *ngFor="let prod of cliente.produtos">
+                                <li>{{ prod.nome }}</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

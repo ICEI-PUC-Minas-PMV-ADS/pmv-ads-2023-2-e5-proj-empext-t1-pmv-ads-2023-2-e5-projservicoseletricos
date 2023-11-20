@@ -1,9 +1,14 @@
 package com.puc.polo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Table(name = "produtos")
 @Entity
@@ -40,4 +45,9 @@ public class Produto {
 
     @Column(name = "image")
     private String image;
+
+    @JsonIgnore
+    @ManyToMany(mappedBy = "produtos")
+    private List<User> users = new ArrayList<>();
+
 }

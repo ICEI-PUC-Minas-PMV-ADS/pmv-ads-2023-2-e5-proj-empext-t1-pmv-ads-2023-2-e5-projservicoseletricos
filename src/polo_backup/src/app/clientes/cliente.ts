@@ -1,3 +1,5 @@
+import { Produto } from "../produtos/produto";
+
 export class Cliente{
     id_user: number;
     nome: string;
@@ -9,4 +11,5 @@ export class Cliente{
     numero: string;
     complemento: string;
     empresa: string;
+    produtos: Produto[];
 }

@@ -9,7 +9,7 @@
             <p><strong>Marca: </strong>{{produto.marca}}</p>
             <p><strong>Garantia: </strong>{{produto.garantia == "S" ? "Sim" : "Não"}}</p>
             <p><strong>Especificações: </strong>{{produto.especificacoes}}</p>
-            <p><strong>Preço: R$</strong>{{produto.preco}}</p>
+            <p><strong>Preço: R$</strong>{{produto.preco.toFixed(2).replace('.', ',')}}</p>
         </div>
         <a href="#" (click)="fechar($event)" *ngIf="!oculto">Ver menos...</a>
     </div>

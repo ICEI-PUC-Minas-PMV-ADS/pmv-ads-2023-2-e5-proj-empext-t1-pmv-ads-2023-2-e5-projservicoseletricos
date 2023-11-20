@@ -84,16 +84,16 @@
           <a class="list-group-item list-group-item-action" *ngFor="let produto of carrinho">
             <div class="d-flex w-100 justify-content-between" >
               <h5 class="mb-1">{{ produto.nome }}</h5>
-              <small>R${{produto.preco}}</small>
+              <small>R${{produto.preco.toFixed(2).replace('.', ',')}}</small>
             </div>
             <small>Quantidade: {{produto.quantidade}}</small>
           </a>
         </div>
       </div>
       <div class="modal-footer">
-        <p style="margin-right: 350px; display: inline;" *ngIf="carrinho.length > 0"><strong>Subtotal: </strong>R${{subtotal}}</p>
+        <p style="margin-right: 350px; display: inline;" *ngIf="carrinho.length > 0"><strong>Subtotal: </strong>R${{subtotal.toFixed(2).replace('.', ',')}}</p>
         <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Voltar</button>
-        <button type="button" class="btn btn-primary btn-sm">Enviar</button>
+        <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal" (click)="adicionarOrcamento()">Enviar</button>
       </div>
     </div>
   </div>

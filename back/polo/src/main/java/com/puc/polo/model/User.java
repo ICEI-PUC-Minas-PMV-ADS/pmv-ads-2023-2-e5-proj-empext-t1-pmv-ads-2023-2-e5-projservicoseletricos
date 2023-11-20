@@ -1,11 +1,7 @@
 package com.puc.polo.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,9 +12,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 @Entity
 @Table(name = "User")  // Nome da tabela corrigido para "User"
@@ -67,6 +61,12 @@ public class User implements UserDetails {
 
     @Column(name = "role")
     private String role;
+
+    @ManyToMany
+    @JoinTable(name = "orcamentos",
+    joinColumns = @JoinColumn(name = "id_user"),
+    inverseJoinColumns = @JoinColumn(name = "id_produto"))
+    private List<Produto> produtos = new ArrayList<>();
 
     public User(String nome, String sobrenome, String email, String senha, String cep, String logradouro,
                 String bairro, String numero, String complemento, String empresa, String role){

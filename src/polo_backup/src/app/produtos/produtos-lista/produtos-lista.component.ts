@@ -3,6 +3,8 @@ import { Produto } from '../produto';
 import { ProdutosService } from 'src/app/produtos.service';
 import { CategoriasService } from 'src/app/categorias.service';
 import { Categoria } from 'src/app/categoria';
+import { ClientesService } from 'src/app/clientes.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-produtos-lista',
@@ -21,14 +23,18 @@ export class ProdutosListaComponent implements OnInit{
   edit: boolean = false;
   usuarioLogado: boolean = localStorage.getItem("access_token") != null;
   userRole: string = localStorage.getItem("role") || "";
+  userId: string = localStorage.getItem("id") || "";
 
   carrinho: Produto[] = [];
   subtotal: number = 0;
+  msgOrcamento = '';
 
 
   constructor(
     private service: ProdutosService,
-    private categoriaService: CategoriasService
+    private categoriaService: CategoriasService,
+    private clienteService: ClientesService,
+    private router: Router
   ){}
 
   ngOnInit(): void {
@@ -93,5 +99,33 @@ export class ProdutosListaComponent implements OnInit{
         }
       })
     }
+  }
+
+  adicionarOrcamento(){
+    if (this.usuarioLogado){
+      this.carrinho.forEach(prod => {
+        this.clienteService.adicionarOrcamento(this.userId, prod.idProduto).subscribe({
+          next: (response) => {
+            console.log(response);
+          },
+          error: errorResponse => {
+            console.log(errorResponse);
+          }
+        })
+      })
+      this.montarMensagemOrcamento();
+      window.open('https://wa.me/+5519995573590/?text=' + this.msgOrcamento);
+    } else {
+      alert('Ops! É preciso fazer o login antes!');
+    }
+  }
+
+  montarMensagemOrcamento(){
+    let listaProdutos = '';
+    this.carrinho.forEach(prod => {
+      listaProdutos += prod.nome + '\n';
+    })
+    this.msgOrcamento = 'Olá, gostaria de comprar os seguintes produtos: \n' + listaProdutos;
+    this.msgOrcamento = encodeURIComponent(this.msgOrcamento);
   }
 }

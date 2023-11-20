@@ -42,10 +42,12 @@ public class AuthenticationController {
 
             if (auth.isAuthenticated()){
                 Collection<? extends GrantedAuthority> authorities = auth.getAuthorities();
+                User usuario = (User)auth.getPrincipal();
+                Integer id = usuario.getId_user();
 
                 List<String> roles =authorities.stream().map(GrantedAuthority::getAuthority).toList();
                 var token = tokenService.generateToken((User)auth.getPrincipal());
-                return ResponseEntity.ok(new LoginResponseDTO(token, roles));
+                return ResponseEntity.ok(new LoginResponseDTO(token, roles, id));
             } else {
                 throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Usuário ou senha inválidos");
             }
