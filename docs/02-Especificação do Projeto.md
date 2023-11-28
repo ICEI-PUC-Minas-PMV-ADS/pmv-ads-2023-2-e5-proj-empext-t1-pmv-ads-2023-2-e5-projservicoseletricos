@@ -32,7 +32,12 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-002.4| Permitir que o cliente visualize os serviços | ALTA |
 |RF-003.1| Permitir que o cliente solicite orçamento | ALTA |
 |RF-003.2| Permitir que o usuário responda o orçamento | ALTA |
-|RF-004.1| Permitir que o usuário gerencie a agenda | MÉDIA |
+|RF-004.1| Permitir que o cadastro do cliente | ALTA |
+|RF-004.2| Permitir que cliente edite o cadastro | ALTA |
+|RF-004.3| Permitir que cliente exclua o cadastro | ALTA |
+|RF-005.1| Permitir que cliente crie orçamento | ALTA |
+|RF-005.2| Permitir que cliente edite o orçamento | ALTA |
+|RF-005.3| Permitir que cliente gerencie os orçamentos | ALTA |
 
 
 ### Requisitos não Funcionais
