@@ -1,0 +1,25 @@
+<div class="modal-body ">
+    <div class="col-8">
+        <form>
+            <div class="form-group">
+                <label>Nome: </label>
+                <input type="text" class="form-control" name="nome" id="nomeCategoria" [(ngModel)]="categoria.nome">
+            </div>
+        </form>
+    </div>
+    <div class="col-8 mt-4">
+        <ul class="list-group" *ngFor="let categoria of categorias">
+            <li class="list-group-item">{{ categoria.nome }}
+                <button type="button" class="btn float-end" *ngIf="userRole == 'ROLE_ADMIN'" (click)="deletar(categoria)">
+                <i class="bi bi-trash3"></i>
+            </button>
+            </li>
+          </ul>
+    </div>
+
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Fechar</button>
+    <button type="submit" class="btn btn-primary btn-sm" data-bs-dismiss="modal" (click)="cadastrar()"
+        >Cadastrar</button>
+</div>

@@ -6,13 +6,15 @@ import { ProdutosListaComponent } from './produtos-lista/produtos-lista.componen
 import { ProdutoCardComponent } from './produto-card/produto-card.component';
 import { ProdutoFormComponent } from './produto-form/produto-form.component';
 import { FormsModule } from '@angular/forms';
+import { CategoriaFormComponent } from './categoria-form/categoria-form.component';
 
 
 @NgModule({
   declarations: [
     ProdutosListaComponent,
     ProdutoCardComponent,
-    ProdutoFormComponent
+    ProdutoFormComponent,
+    CategoriaFormComponent
   ],
   imports: [
     CommonModule,

@@ -23,11 +23,6 @@
             </div>
 
             <div class="form-group">
-                <label>Quantidade: </label>
-                <input type="number" class="form-control" name="quantidade" placeholder="Quantidade do produto" [(ngModel)]="produto.quantidade" id="quantidade">
-            </div>
-
-            <div class="form-group">
                 <label>Categoria: </label>
                 <select class="form-select" name="categoria" id="categoria" [(ngModel)]="produto.idCategoria">
                     <option *ngFor="let cat of categorias"

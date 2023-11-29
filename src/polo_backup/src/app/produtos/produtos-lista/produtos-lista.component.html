@@ -4,9 +4,13 @@
 
 
     <div class="col">
-      <button *ngIf="userRole == 'ROLE_ADMIN'" class="btn btn-primary btn-sm float-end" data-bs-toggle="modal"
+      <button *ngIf="userRole == 'ROLE_ADMIN'" class="btn btn-primary btn-sm" data-bs-toggle="modal"
         data-bs-target="#modal-cadastro">
         Cadastrar Produto
+      </button>
+      <button *ngIf="userRole == 'ROLE_ADMIN'" class="btn btn-primary btn-sm float-end" data-bs-toggle="modal"
+        data-bs-target="#modal-categoria">
+        Cadastrar Categoria
       </button>
     </div>
   </div>
@@ -66,6 +70,24 @@
       </div>
     </div>
   </div>
+
+  <!-- Modal Categoria -->
+
+  <div class="modal fade" id="modal-categoria" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-primary">
+          <h1 class="modal-title fs-5 text-center text-light">
+            Cadastrar categoria
+          </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <app-categoria-form (enviarMsgSucesso)="exibirSucesso($event)"
+          (enviarMsgErro)="exibirErro($event)"></app-categoria-form>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <!-- Modal Carrinho -->
