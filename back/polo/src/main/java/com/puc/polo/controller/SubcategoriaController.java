@@ -1,7 +1,7 @@
 package com.puc.polo.controller;
 
-import com.puc.polo.model.Categoria;
-import com.puc.polo.repositories.CategoriaRepository;
+import com.puc.polo.model.Subcategoria;
+import com.puc.polo.repositories.SubcategoriaRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -13,28 +13,28 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/categorias")
-public class CategoriaController {
+@RequestMapping("/api/subcategorias")
+public class SubcategoriaController {
 
-    private final CategoriaRepository repository;
+    private final SubcategoriaRepository repository;
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<Categoria> getCategorias() {
-        return this.repository.findAll();
+    public List<Subcategoria> get() {
+        return repository.findAll();
     }
 
     @GetMapping("{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Categoria getById(@PathVariable Integer id) {
-        return this.repository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Categoria não encontrada"));
+    public Subcategoria getById(@PathVariable Integer id) {
+        return repository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Subacategoria não encontrada."));
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Categoria save(@RequestBody Categoria categoria) {
-        return this.repository.save(categoria);
+    public Subcategoria save(@RequestBody Subcategoria subcategoria) {
+        return repository.save(subcategoria);
     }
 
     @DeleteMapping("{id}")
