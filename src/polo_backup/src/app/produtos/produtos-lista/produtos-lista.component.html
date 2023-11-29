@@ -20,14 +20,6 @@
     por whatsapp!
   </p>
 
-  <div data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-    <img class="carrinho" src="../assets/carrinho-de-compras.png" alt="" id="shoppingCar" />
-    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-      {{carrinho.length}}
-      <span class="visually-hidden">unread messages</span>
-    </span>
-  </div>
-
   <select class="form-select mb-4" aria-label="Default select example">
     <option selected (click)="filtrarPorCategoria(0)">Filtrar por categoria</option>
     <option *ngFor="let cat of categorias" [value]="cat.idCategoria" (click)="filtrarPorCategoria(cat.idCategoria)">{{

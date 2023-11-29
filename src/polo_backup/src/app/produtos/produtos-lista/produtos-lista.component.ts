@@ -82,11 +82,11 @@ export class ProdutosListaComponent implements OnInit{
     this.subtotal += produto.preco * produto.quantidade;
   }
 
-  removerDoCarrinho(idProduto: number){
+  removerDoCarrinho(produto: Produto){
     this.carrinho = this.carrinho.filter(function( obj ) {
-      return obj.idProduto !== idProduto;
+      return obj.idProduto !== produto.idProduto;
     });
-    console.log(this.carrinho);
+    this.subtotal -= produto.preco * produto.quantidade;
   }
 
   filtrarPorCategoria(idCategoria: number){

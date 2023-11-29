@@ -15,8 +15,8 @@
     </div>
     <div class="card-body">
         <button type="button" class="btn btn-outline-success btn-sm" title="Adiconar ao carrinho" data-bs-toggle="modal"
-        [attr.data-bs-target]="'#modal-adicionar' + produto.idProduto"><i class="bi bi-plus"></i></button>
-        <button type="button" class="btn btn-outline-danger btn-sm" (click)="removeProduto()" title="Remover do carrinho"><i class="bi bi-x"></i></button>
+        [attr.data-bs-target]="'#modal-adicionar' + produto.idProduto" [disabled]="produtoNoCarrinho"><i class="bi bi-plus"></i></button>
+        <button type="button" class="btn btn-outline-danger btn-sm" (click)="removeProduto()" title="Remover do carrinho" [disabled]="!produtoNoCarrinho"><i class="bi bi-x"></i></button>
         <button type="button" class="btn" *ngIf="userRole == 'ROLE_ADMIN'" data-bs-toggle="modal"
             [attr.data-bs-target]="'#modal-' + produto.idProduto">
             <i class="bi bi-trash3"></i>

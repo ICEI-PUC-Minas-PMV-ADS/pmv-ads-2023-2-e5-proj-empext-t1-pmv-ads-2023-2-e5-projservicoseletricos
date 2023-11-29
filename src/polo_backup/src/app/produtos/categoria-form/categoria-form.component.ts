@@ -31,6 +31,7 @@ export class CategoriaFormComponent implements OnInit{
       .subscribe({
         next: response => {
           this.enviarMsgSucesso.emit(this.categoria.nome + " cadastrada com sucesso!");
+          this.ngOnInit();
         },
         error: erroResponse => {
           this.enviarMsgErro.emit("Erro inesperado ao cadastrar produto");
@@ -44,13 +45,15 @@ export class CategoriaFormComponent implements OnInit{
     if (confirmacao){
       this.service.delete(categoria.idCategoria).subscribe({
         next: response => {
-          this.enviarMsgSucesso.emit(this.categoria.nome + " excluída com sucesso!");
+          this.enviarMsgSucesso.emit(categoria.nome + " excluída com sucesso!");
+          this.ngOnInit();
         },
         error: erroResponse => {
           this.enviarMsgErro.emit("Erro inesperado ao cadastrar produto");
         }
       })
     } 
+    
   }
 
 }
