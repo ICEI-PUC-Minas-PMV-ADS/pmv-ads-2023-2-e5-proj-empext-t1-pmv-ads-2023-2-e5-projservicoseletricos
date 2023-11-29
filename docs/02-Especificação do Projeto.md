@@ -32,7 +32,12 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-002.4| Permitir que o cliente visualize os serviços | ALTA |
 |RF-003.1| Permitir que o cliente solicite orçamento | ALTA |
 |RF-003.2| Permitir que o usuário responda o orçamento | ALTA |
-|RF-004.1| Permitir que o usuário gerencie a agenda | MÉDIA |
+|RF-004.1| Permitir que o cadastro do cliente | ALTA |
+|RF-004.2| Permitir que cliente edite o cadastro | ALTA |
+|RF-004.3| Permitir que cliente exclua o cadastro | ALTA |
+|RF-005.1| Permitir que cliente crie orçamento | ALTA |
+|RF-005.2| Permitir que cliente edite o orçamento | ALTA |
+|RF-005.3| Permitir que cliente gerencie os orçamentos | ALTA |
 
 
 ### Requisitos não Funcionais
@@ -59,7 +64,7 @@ Enumere as restrições à sua solução. Lembre-se de que as restrições geral
 
 ## Diagrama de Casos de Uso
 
-![diagrama](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t1-pmv-ads-2023-2-e5-projservicoseletricos/blob/main/src/Diagrama%20de%20caso%20de%20uso.png)
+![diagrama](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t1-pmv-ads-2023-2-e5-projservicoseletricos/blob/docs/img/DCU.png)
 
 > **Links Úteis**:
 > - [Criando Casos de Uso](https://www.ibm.com/docs/pt-br/elm/6.0?topic=requirements-creating-use-cases)
