@@ -43,11 +43,23 @@ public class Produto {
     @Column(name = "id_categoria")
     private Integer idCategoria;
 
-    @Column(name = "image")
-    private String image;
+  
 
     @JsonIgnore
     @ManyToMany(mappedBy = "produtos")
     private List<User> users = new ArrayList<>();
+   
+
+    @OneToMany(mappedBy = "produto", cascade = CascadeType.ALL)
+    private List<Imagem> imagens = new ArrayList<>();
+
+    public List<Imagem> getImagens() {
+        return imagens;
+    }
+
+    public void setImagens(List<Imagem> imagens) {
+        this.imagens = imagens;
+    }
+
 
 }

@@ -1,7 +1,10 @@
 package com.puc.polo.controller;
 
+import com.puc.polo.model.Imagem;
 import com.puc.polo.model.Produto;
 import com.puc.polo.repositories.ProdutoRepository;
+import com.puc.polo.servicos.ImagemService;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -18,10 +21,21 @@ public class ProdutoController {
 
     private final ProdutoRepository repository;
 
+    private final ImagemService imagemService;
+
+
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<Produto> getProdutos() {
-        return repository.findAll();
+        List<Produto> produtos = repository.findAll();
+    
+
+        // Itera sobre os produtos para carregar as imagens associadas
+        for (Produto produto : produtos) {
+            List<Imagem> imagens = imagemService.findByProdutoId(produto.getIdProduto());
+            produto.setImagens(imagens);
+        }
+        return produtos;
     }
 
     @GetMapping("{id}")
