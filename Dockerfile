@@ -1,14 +1,31 @@
+
 FROM ubuntu:latest AS build
 
-RUN apt-get update
-RUN apt-get install openjdk-17-jdk -y
-COPY . . 
- 
-RUN apt-get install maven -y
-RUN mvn clean install
+# Atualiza e instala o JDK 17
+RUN apt-get update && \
+    apt-get install -y openjdk-17-jdk
+
+# Copia o código-fonte para o contêiner
+COPY . /app
+
+# Define o diretório de trabalho como /app
+WORKDIR /app
+
+# Instala o Maven e compila o projeto
+RUN apt-get install -y maven && \
+    mvn clean install
+
+# Estágio final
 FROM openjdk:17-jdk-slim
+
+# Define o diretório de trabalho como /app
+WORKDIR /app
+
+# Copia o arquivo JAR compilado do estágio de construção
+COPY --from=build /app/polo_back/polo/target/polo-0.0.1-SNAPSHOT.jar app.jar
+
+# Expõe a porta 8080
 EXPOSE 8080
 
-COPY —from=build src/polo_back/polo/target/polo-0.0.1-SNAPSHOT.jar app.jar
-
-ENTRYPOINT [“java”, “-jar”, “app.jar”]
+# Comando para executar a aplicação quando o contêiner for iniciado
+ENTRYPOINT ["java", "-jar", "app.jar"]
