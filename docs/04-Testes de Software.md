@@ -5,7 +5,7 @@
 |Descrição| Requisito Funional do teste: RF-001.1. <br /> Clicar no botão "Cadastrar produtos" |
 |Caso de Teste| Testar a inserção de novos produtos |
 |Pré-condição| Estar logado com o usuário de admin e acessar a pagina de produtos |
-|Fluxo do teste|Inserir usuário. <br /> Inserir senha. <br /> Clicar na aba “Produtos”. <br /> Clicar no botão "Adicionar produto". |
+|Fluxo do teste|Clicar em Login. <br /> Inserir email. <br /> Inserir senha. <br /> Clicar em "Entrar". <br /> Clicar na aba “Produtos”. <br /> Clicar no botão "Adicionar produto". |
 |Resultado esperado| Novo produto cadastrado com sucesso. |
 
 ### Cenário de teste 02
