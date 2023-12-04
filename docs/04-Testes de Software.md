@@ -97,13 +97,3 @@
 |Pré-condição| Acessar a conversa com a Polo Engenharia no Whatsapp.|
 |Fluxo do teste| Abrir o app "Whatsapp". <br /> Clicar na conversa com a Polo Engenharia e responder a mensagem.|
 |Resultado esperado| Mensagem enviada corretamente á Polo Engenharia. |
-
-### Cenário de teste 11
-
-|Título| Permitir que o usuário gerencie a agenda |
-|------|-----------------------------------------|
-|Descrição| Requisito Funional do teste: RF-004.1. <br />|
-|Caso de Teste| Testar o gerenciamento da agenda. |
-|Pré-condição| Estar logado como admin e acessar a pagina "Agenda".|
-|Fluxo do teste| Abrir a pagina "Agenda". <br /> Adicionar ou excluir evento da agenda.|
-|Resultado esperado| O usuário adicione ou exclua o evento corretamente. |
