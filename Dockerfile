@@ -1,4 +1,4 @@
-# Estágio de construção
+
 FROM ubuntu:latest AS build
 
 # Atualiza e instala o JDK 17
