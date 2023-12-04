@@ -18,7 +18,7 @@ FROM openjdk:17-jdk-slim
 
 
 # Copia o arquivo JAR compilado do estágio de construção
-COPY --from=build /polo_back/polo/target/polo-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build src/polo_back/polo/target/polo-0.0.1-SNAPSHOT.jar app.jar
 
 # Expõe a porta 8080
 EXPOSE 8080
