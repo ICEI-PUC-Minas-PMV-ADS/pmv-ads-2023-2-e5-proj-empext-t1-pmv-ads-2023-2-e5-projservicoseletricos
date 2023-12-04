@@ -7,7 +7,7 @@
 |Pré-condição| Estar logado com o usuário de admin e acessar a pagina de produtos |
 |Fluxo do teste|Inserir usuário. <br /> Inserir senha. <br /> Clicar na aba “Produtos”. <br /> Clicar no botão "Adicionar produto". |
 |Resultado esperado| Novo produto cadastrado com sucesso. |
-|Video de Teste|docs\videos\cenario1.mkv|
+|Video de Teste|https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t1-pmv-ads-2023-2-e5-projservicoseletricos/raw/main/docs/videos/cenario1.mkv|
 
 ### Cenário de teste 02
 
