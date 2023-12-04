@@ -29,6 +29,12 @@ public class UserController {
     return repository.findAll();
   }
 
+  @GetMapping("{id}")
+  public User getById(@PathVariable Integer id){
+    return repository.findById(id)
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuário não encontrado"));
+  }
+
   @GetMapping("/filtrar")
   public List<User> filtrarPorNome(
           @RequestParam(value="nome", required = false, defaultValue = "") String nome)
@@ -49,5 +55,13 @@ public class UserController {
     produtosOrcamento.add(produto);
     cliente.setProdutos(produtosOrcamento);
     return repository.save(cliente);
+  }
+
+  @DeleteMapping("{idUser}")
+  @ResponseStatus(HttpStatus.NO_CONTENT)
+  public void deletarUsuario(@PathVariable Integer idUser){
+    log.info("Deletando usuário de id {}...", idUser);
+    repository.deleteById(idUser);
+    log.info("Usuário de id {} deletado.", idUser);
   }
 }
