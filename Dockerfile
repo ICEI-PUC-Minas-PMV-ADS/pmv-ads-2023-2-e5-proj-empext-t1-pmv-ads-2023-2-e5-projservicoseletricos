@@ -6,10 +6,8 @@ RUN apt-get update && \
     apt-get install -y openjdk-17-jdk
 
 # Copia o código-fonte para o contêiner
-COPY . /app
+COPY . .
 
-# Define o diretório de trabalho como /app
-WORKDIR /app
 
 # Instala o Maven e compila o projeto
 RUN apt-get install -y maven && \
@@ -18,8 +16,6 @@ RUN apt-get install -y maven && \
 # Estágio final
 FROM openjdk:17-jdk-slim
 
-# Define o diretório de trabalho como /app
-WORKDIR /app
 
 # Copia o arquivo JAR compilado do estágio de construção
 COPY --from=build /app/polo_back/polo/target/polo-0.0.1-SNAPSHOT.jar app.jar
