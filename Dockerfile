@@ -9,6 +9,6 @@ RUN mvn clean install
 FROM openjdk:17-jdk-slim
 EXPOSE 8080
 
-COPY —from=build src\polo_back\polo\target\polo-0.0.1-SNAPSHOT.jar app.jar
+COPY —from=build src/polo_back/polo/target/polo-0.0.1-SNAPSHOT.jar app.jar
 
 ENTRYPOINT [“java”, “-jar”, “app.jar”]
