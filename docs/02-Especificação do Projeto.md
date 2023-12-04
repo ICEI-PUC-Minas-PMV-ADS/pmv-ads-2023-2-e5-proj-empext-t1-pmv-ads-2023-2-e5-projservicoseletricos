@@ -38,6 +38,8 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-005.1| Permitir que cliente crie orçamento | ALTA |
 |RF-005.2| Permitir que cliente edite o orçamento | ALTA |
 |RF-005.3| Permitir que cliente gerencie os orçamentos | ALTA |
+|RF-006.1| Permitir que o usuário visualize os clientes cadastrados | MÉDIA |
+|RF-006.2| Permitir que o usuário visualize dados dos clientes cadastrados | MÉDIA |
 
 
 ### Requisitos não Funcionais
