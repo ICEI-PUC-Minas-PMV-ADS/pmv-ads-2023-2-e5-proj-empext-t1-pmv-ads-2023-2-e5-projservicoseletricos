@@ -7,6 +7,7 @@
 |Pré-condição| Estar logado com o usuário de admin e acessar a pagina de produtos |
 |Fluxo do teste|Inserir usuário. <br /> Inserir senha. <br /> Clicar na aba “Produtos”. <br /> Clicar no botão "Adicionar produto". |
 |Resultado esperado| Novo produto cadastrado com sucesso. |
+|Video de Teste|https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t1-pmv-ads-2023-2-e5-projservicoseletricos/raw/main/docs/videos/cenario1.mkv|
 
 ### Cenário de teste 02
 
@@ -17,6 +18,7 @@
 |Pré-condição| Estar logado com o usuário de admin |
 |Fluxo do teste|Inserir usuário. <br /> Inserir senha. <br /> Clicar na aba “Produtos”. <br /> Clicar no botão "Editar produto". |
 |Resultado esperado| Editar informações de produto. |
+|Video de Teste|https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t1-pmv-ads-2023-2-e5-projservicoseletricos/raw/main/docs/videos/cenario2.mkv|
 
 ### Cenário de teste 03
 
@@ -27,6 +29,7 @@
 |Pré-condição| Estar logado com o usuário de admin |
 |Fluxo do teste|Inserir usuário. <br /> Inserir senha. <br /> Clicar na aba “Produtos”. <br /> Clicar no botão "Excluir produto". |
 |Resultado esperado| Excluir produto da pagina de "Produtos". |
+|Video de Teste|https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t1-pmv-ads-2023-2-e5-projservicoseletricos/raw/main/docs/videos/cenario3.mkv|
 
 ### Cenário de teste 04
 
@@ -37,6 +40,7 @@
 |Pré-condição| Estar na aba de produtos (não é necessário login no site). |
 |Fluxo do teste| Clicar na aba “Produtos”. <br /> Clicar no campo "Pesquisar". <br /> Inserir o nome do produto que deseja pesquisar. <br /> Clicar em "Pesquisar". |
 |Resultado esperado| Pesquisar produto da pagina de "Produtos". |
+|Video de Teste|https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t1-pmv-ads-2023-2-e5-projservicoseletricos/raw/main/docs/videos/cenario4.9.10.mkv|
 
 ### Cenário de teste 05
 
@@ -47,6 +51,7 @@
 |Pré-condição| Estar logado com o usuário de admin e acessar a pagina de serviços |
 |Fluxo do teste|Inserir usuário. <br /> Inserir senha. <br /> Clicar na aba “Serviços". <br /> Clicar em "Adicionar serviços". |
 |Resultado esperado| Novo serviço cadastrado com sucesso. |
+|Video de Teste|https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t1-pmv-ads-2023-2-e5-projservicoseletricos/raw/main/docs/videos/cenario5.mkv|
 
 ### Cenário de teste 06
 
@@ -57,6 +62,7 @@
 |Pré-condição| Estar logado com o usuário de admin e acessar a pagina de serviços |
 |Fluxo do teste|Inserir usuário. <br /> Inserir senha. <br /> Clicar na aba “Serviços". <br /> Clicar no campo "Pesquisar". <br /> Inserir o nome do serviço que deseja editar. <br /> Clicar em "Editar serviço". |
 |Resultado esperado| Serviço editado com sucesso. |
+|Video de Teste|https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t1-pmv-ads-2023-2-e5-projservicoseletricos/raw/main/docs/videos/cenario6.mkv|
 
 ### Cenário de teste 07
 
@@ -67,6 +73,7 @@
 |Pré-condição| Estar logado com o usuário de admin e acessar a pagina de serviços |
 |Fluxo do teste|Inserir usuário. <br /> Inserir senha. <br /> Clicar na aba “Serviços". <br /> Clicar no campo "Pesquisar". <br /> Inserir o nome do serviço que deseja excluir. <br /> Clicar em "excluir serviço". |
 |Resultado esperado| Serviço editado com sucesso. |
+|Video de Teste|https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t1-pmv-ads-2023-2-e5-projservicoseletricos/raw/main/docs/videos/cenario7.mkv|
 
 ### Cenário de teste 08
 
@@ -77,6 +84,7 @@
 |Pré-condição| Acessar a pagina de serviços (não é necessário estar logado) |
 |Fluxo do teste| Clicar na aba “Serviços". <br /> Clicar no campo "Pesquisar". <br /> Inserir o nome do serviço que deseja pesquisar. <br /> Clicar em "Pesquisar". |
 |Resultado esperado| Pesquisar serviço na pagina de "Serviços". |
+|Video de Teste|https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t1-pmv-ads-2023-2-e5-projservicoseletricos/raw/main/docs/videos/cenario8.mkv|
 
 ### Cenário de teste 09
 
@@ -87,6 +95,7 @@
 |Pré-condição| Acessar a pagina de orçamentos (não é necessário estar logado) |
 |Fluxo do teste| Clicar na aba “Orçamentos". <br /> Clicar no campo "Solicitar orçamento".|
 |Resultado esperado| Ser direcionado ao Whatsapp da Polo Engenharia. |
+|Video de Teste|https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t1-pmv-ads-2023-2-e5-projservicoseletricos/raw/main/docs/videos/cenario4.9.10.mkv|
 
 ### Cenário de teste 10
 
@@ -97,13 +106,4 @@
 |Pré-condição| Acessar a conversa com a Polo Engenharia no Whatsapp.|
 |Fluxo do teste| Abrir o app "Whatsapp". <br /> Clicar na conversa com a Polo Engenharia e responder a mensagem.|
 |Resultado esperado| Mensagem enviada corretamente á Polo Engenharia. |
-
-### Cenário de teste 11
-
-|Título| Permitir que o usuário gerencie a agenda |
-|------|-----------------------------------------|
-|Descrição| Requisito Funional do teste: RF-004.1. <br />|
-|Caso de Teste| Testar o gerenciamento da agenda. |
-|Pré-condição| Estar logado como admin e acessar a pagina "Agenda".|
-|Fluxo do teste| Abrir a pagina "Agenda". <br /> Adicionar ou excluir evento da agenda.|
-|Resultado esperado| O usuário adicione ou exclua o evento corretamente. |
+|Video de Teste|https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t1-pmv-ads-2023-2-e5-projservicoseletricos/raw/main/docs/videos/cenario4.9.10.mkv|
