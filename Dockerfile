@@ -10,8 +10,8 @@ COPY . .
 
 
 # Instala o Maven e compila o projeto
-RUN apt-get install -y maven && \
-    mvn -f src/polo_back/polo/pom.xml clean install
+RUN apt-get install -y maven 
+RUN mvn -f src/polo_back/polo/pom.xml clean install
 
 # Estágio final
 FROM openjdk:17-jdk-slim
