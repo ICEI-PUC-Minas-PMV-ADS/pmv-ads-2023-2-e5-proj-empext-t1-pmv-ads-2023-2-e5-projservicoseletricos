@@ -8,7 +8,7 @@ import { Categoria } from './categoria';
 })
 export class CategoriasService {
 
-  apiURL: string = 'http://localhost:8080/api/categorias'
+  apiURL: string = 'https://deploy-polo.onrender.com/api/categorias'
 
   constructor(private http: HttpClient) {
 

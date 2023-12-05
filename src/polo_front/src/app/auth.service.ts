@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  apiURL: string = "http://localhost:8080/auth"
+  apiURL: string = "https://deploy-polo.onrender.com/auth"
 
   constructor(
     private http: HttpClient

@@ -38,6 +38,11 @@ export class AppComponent {
     this.esconderCarrinho();
   }
 
+  navegarAreaCliente(){
+    this.router.navigate(['/area-cliente'])
+    this.esconderCarrinho();
+  }
+
   mostrarIconeCarrinho(){
     this.mostrarCarrinho = true;
   }

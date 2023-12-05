@@ -76,7 +76,7 @@
         </div>
 
         <div class="row " *ngIf="usuarioLogado">
-          <div>Bem vindo(a), {{ email }}</div>
+          <div>Bem vindo(a), <a class="nav-link maozinha" (click)="navegarAreaCliente()">{{ email }}</a></div>
           <div>
             <a href="#" (click)="deslogar()" style="text-decoration: none">
               <img src="../assets/log-out.png" alt="" id="logout" srcset="" title="Sair" />
