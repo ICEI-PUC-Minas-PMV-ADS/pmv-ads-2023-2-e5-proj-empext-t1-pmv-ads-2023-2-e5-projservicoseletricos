@@ -13,6 +13,7 @@ import com.puc.polo.model.User;
 import com.puc.polo.repositories.UserRepository;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -57,7 +58,7 @@ public class UserController {
           @PathVariable Integer idUser,
           @PathVariable Integer idProduto
   ){
-    List<Produto> produtosOrcamento = null;
+    List<Produto> produtosOrcamento = new ArrayList<>();
     User cliente = repository.findById(idUser).get();
     Produto produto = produtoRepository.findById(idProduto).get();
     produtosOrcamento = cliente.getProdutos();
