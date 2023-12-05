@@ -6,11 +6,21 @@ Tecnologias Utilizadas
 Servidor de Aplicação:
 
 O front ficou hospedado no pages.github.com 
+<img width="1102" alt="image" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t1-pmv-ads-2023-2-e5-projservicoseletricos/docs/img/Polo home.jpg>
 
+<img width="1102" alt="image" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t1-pmv-ads-2023-2-e5-projservicoseletricos/docs/img/Polo produtos.jpg>
+
+<img width="1102" alt="image" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t1-pmv-ads-2023-2-e5-projservicoseletricos/docs/img/Polo carrinho.jpg>
+
+<img width="1102" alt="image" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t1-pmv-ads-2023-2-e5-projservicoseletricos/docs/img/Polo empresa.jpg>
 
 No Render esta hospedado backend e nosso banco. 
 
 
+<img width="1102" alt="image" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t1-pmv-ads-2023-2-e5-projservicoseletricos/docs/img/back.jpg>
+
+
+<img width="1102" alt="image" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t1-pmv-ads-2023-2-e5-projservicoseletricos/docs/img/back - BD.jpg>
 
 Banco de Dados:
 
@@ -98,6 +108,10 @@ REFERENCES PRODUTOS(ID_PRODUTO);
 ALTER TABLE ORCAMENTOS
 ADD CONSTRAINT FK_ORCAMENTO_USER
 FOREIGN KEY(ID_USER)
+REFERENCES USUARIO(ID_USER);
+
+
+-
 REFERENCES USUARIO(ID_USER);
 
 
