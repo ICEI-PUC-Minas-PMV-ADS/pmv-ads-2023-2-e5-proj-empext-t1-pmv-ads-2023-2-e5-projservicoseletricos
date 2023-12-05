@@ -43,7 +43,7 @@ public class AuthenticationController {
             if (auth.isAuthenticated()){
                 Collection<? extends GrantedAuthority> authorities = auth.getAuthorities();
                 User usuario = (User)auth.getPrincipal();
-                Integer id = usuario.getId_user();
+                Integer id = usuario.getIdUser();
 
                 List<String> roles =authorities.stream().map(GrantedAuthority::getAuthority).toList();
                 var token = tokenService.generateToken((User)auth.getPrincipal());

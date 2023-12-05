@@ -27,7 +27,7 @@ public class User implements UserDetails {
     @Id
     @Column(name = "id_user")  // Se desejar, você pode corrigir o nome da coluna do ID
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_user;  // Corrigido para refletir o nome da tabela
+    private Integer idUser;  // Corrigido para refletir o nome da tabela
 
     @Column(name = "nome")
     private String nome;
