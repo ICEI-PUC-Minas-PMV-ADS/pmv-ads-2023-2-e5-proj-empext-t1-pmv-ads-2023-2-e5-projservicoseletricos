@@ -16,4 +16,7 @@ public interface UserRepository extends JpaRepository<User, Integer>{
 
     @Query("select u from User u where upper(u.nome) like upper(:nome)")
     List<User> findByNome(@Param("nome") String nome);
+
+    @Query("select u from User u where upper(u.email) = upper(:email)")
+    User findByEmail2(String email);
 }

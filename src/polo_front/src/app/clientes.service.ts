@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Cliente } from './clientes/cliente';
 import { Observable } from 'rxjs';
+import { User } from './login/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientesService {
 
-  apiURL: string = 'http://localhost:8080/api/user'
+  apiURL: string = 'https://deploy-polo.onrender.com/api/user'
 
   constructor(private http: HttpClient) { }
 
@@ -39,7 +40,7 @@ export class ClientesService {
     return this.http.put<any>(this.apiURL + '/' + idUser + '/' + idProduto, null, {headers});
   }
 
-  update(clienteEditado: Cliente) : Observable<any>{
+  update(clienteEditado: User) : Observable<any>{
     const tokenString = localStorage.getItem('access_token') || '{}'; 
     const token = JSON.parse(tokenString);
     const headers = {
@@ -48,7 +49,7 @@ export class ClientesService {
     return this.http.put(this.apiURL + '/' + clienteEditado.id_user, clienteEditado, {headers});
   }
 
-  delete(id: number) : Observable<any>{
+  delete(id: string) : Observable<any>{
     const tokenString = localStorage.getItem('access_token') || '{}'; 
     const token = JSON.parse(tokenString);
     const headers = {
