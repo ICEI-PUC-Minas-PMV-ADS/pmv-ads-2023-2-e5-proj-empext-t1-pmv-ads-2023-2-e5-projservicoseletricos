@@ -39,7 +39,7 @@ public class UserController {
     String token = authorization.replace("Bearer ", "");
     String login = this.securityFilter.recoverLoginFromRequest(token);
     User user = this.repository.findByEmail2(login);
-    if (user.getId_user().equals(id)){
+    if (user.getIdUser().equals(id)){
       return user;
     }
     throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Credenciais inválidas");
@@ -81,11 +81,11 @@ public class UserController {
     String token = authorization.replace("Bearer ", "");
     String login = this.securityFilter.recoverLoginFromRequest(token);
     User user = this.repository.findByEmail2(login);
-    if (user.getId_user().equals(id)){
+    if (user.getIdUser().equals(id)){
       repository
               .findById(id)
               .map(usuario -> {
-                userAtualizado.setId_user(usuario.getId_user());
+                userAtualizado.setIdUser(usuario.getIdUser());
                 repository.save(userAtualizado);
                 return Void.TYPE;
               })
