@@ -1,22 +1,18 @@
 package com.puc.polo.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Objects;
 
 @Entity
-@Table(name = "User")  // Nome da tabela corrigido para "User"
+@Table(name = "User", schema = "polo")  // Nome da tabela corrigido para "User"
 @Getter
 @Setter
 @Data
@@ -65,12 +61,12 @@ public class User implements UserDetails {
 
     @ManyToMany
     @JoinTable(name = "orcamentos",
-    joinColumns = @JoinColumn(name = "id_user"),
-    inverseJoinColumns = @JoinColumn(name = "id_produto"))
+            joinColumns = @JoinColumn(name = "id_user"),
+            inverseJoinColumns = @JoinColumn(name = "id_produto"))
     private List<Produto> produtos = new ArrayList<>();
 
     public User(String nome, String sobrenome, String email, String senha, String cep, String logradouro,
-                String bairro, String numero, String complemento, String empresa, String role){
+                String bairro, String numero, String complemento, String empresa, String role) {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.email = email;
@@ -86,7 +82,8 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        if (Objects.equals(this.role, "ADMIN")) return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
+        if (Objects.equals(this.role, "ADMIN"))
+            return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
         else return List.of(new SimpleGrantedAuthority("ROLE_USER"));
     }
 
